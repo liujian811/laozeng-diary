@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw 社区 - 老增日记</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .nav {
+            margin-bottom: 30px;
+        }
+        .nav a {
+            color: #4ecdc4;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #1a1a2e;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2em;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .update-info {
+            color: #4ecdc4;
+            font-size: 0.85em;
+            margin-top: 15px;
+        }
+        
+        /* 分类筛选 */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #111118;
+            border-radius: 12px;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            background: #1a1a2e;
+            border: 1px solid #333;
+            border-radius: 20px;
+            color: #888;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.85em;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #4ecdc4;
+            color: #000;
+            border-color: #4ecdc4;
+        }
+        
+        /* 内容网格 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .article-card {
+            background: #111118;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #4ecdc4;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(78, 205, 196, 0.15);
+        }
+        .article-category {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-bottom: 12px;
+        }
+        .cat-deploy { background: #4ecdc4; color: #000; }
+        .cat-skill { background: #ffd93d; color: #000; }
+        .cat-security { background: #ff6b6b; color: #fff; }
+        .cat-case { background: #a78bfa; color: #fff; }
+        .cat-news { background: #68d391; color: #000; }
+        
+        .article-title {
+            font-size: 1.1em;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .article-title:hover {
+            color: #4ecdc4;
+        }
+        .article-summary {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .article-source {
+            color: #4ecdc4;
+        }
+        .article-time {
+            color: #666;
+        }
+        
+        /* 今日更新区块 */
+        .today-section {
+            margin-bottom: 40px;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #1a1a2e;
+        }
+        .section-title {
+            font-size: 1.3em;
+            color: #fff;
+        }
+        .section-count {
+            color: #666;
+            font-size: 0.85em;
+        }
+        
+        /* 历史归档 */
+        .archive-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #1a1a2e;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #444;
+            font-size: 0.85em;
+            border-top: 1px solid #1a1a2e;
+            margin-top: 60px;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .filter-bar {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center; padding: 20px 0; border-bottom: 1px solid #1a1a2e; margin-bottom: 20px;">
+            <a href="index.html" style="color: #4ecdc4; text-decoration: none; margin: 0 15px;">🏠 日记首页</a>
+            <a href="community.html" style="color: #4ecdc4; text-decoration: none; margin: 0 15px;">🦞 OpenClaw 社区</a>
+        </div>
+
+        <div class="nav">
+            <a href="index.html">← 返回日记首页</a>
+        </div>
+
+        <header>
+            <h1>🦞 OpenClaw 社区</h1>
+            <p class="subtitle">全网精选文章聚合 · 每日三次更新</p>
+            <p class="update-info">⏰ 更新时段：早 8:00 · 午 12:00 · 晚 20:00</p>
+        </header>
+
+        <!-- 分类筛选 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterArticles('all')">全部</button>
+            <button class="filter-btn" onclick="filterArticles('deploy')">🚀 入门部署</button>
+            <button class="filter-btn" onclick="filterArticles('skill')">🔧 技能开发</button>
+            <button class="filter-btn" onclick="filterArticles('security')">🔒 安全加固</button>
+            <button class="filter-btn" onclick="filterArticles('case')">💡 实战案例</button>
+            <button class="filter-btn" onclick="filterArticles('news')">📰 官方动态</button>
+        </div>
+
+        <!-- 今日更新 -->
+        <div class="today-section">
+            <div class="section-header">
+                <span class="section-title">📅 今日精选</span>
+                <span class="section-count" id="today-count">加载中...</span>
+            </div>
+            
+            <div class="content-grid" id="today-articles">
+                <!-- 内容由 JavaScript 动态加载 -->
+                <div class="article-card" data-category="news">
+                    <span class="article-category cat-news">📰 官方动态</span>
+                    <a href="https://openclaw101.dev" target="_blank" class="article-title">
+                        OpenClaw 101 学习网站上线：376+ 教程资源，7天掌握 AI 助理
+                    </a>
+                    <p class="article-summary">
+                        从零开始，7天掌握你的 AI 私人助理。收录 376+ 篇教程资源，涵盖入门部署、技能开发、安全加固、实战案例等 31 个分类。
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-source">来源：openclaw101.dev</span>
+                        <span class="article-time">今天 08:00</span>
+                    </div>
+                </div>
+
+                <div class="article-card" data-category="deploy">
+                    <span class="article-category cat-deploy">🚀 入门部署</span>
+                    <a href="https://www.bilibili.com/video/BV1kH6nBFEPq" target="_blank" class="article-title">
+                        B站视频教程：OpenClaw 海量全玩法攻略，国内网络使用 + 本地部署
+                    </a>
+                    <p class="article-summary">
+                        技术爬爬虾出品：几十个案例玩法大全，接入飞书+国产模型方案，让 OpenClaw 在国内网络也能顺畅使用。
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-source">来源：Bilibili</span>
+                        <span class="article-time">今天 08:00</span>
+                    </div>
+                </div>
+
+                <div class="article-card" data-category="security">
+                    <span class="article-category cat-security">🔒 安全加固</span>
+                    <a href="https://thehackernews.com/2026/02/researchers-find-341-malicious-clawhub.html" target="_blank" class="article-title">
+                        安全警告：341 个恶意 ClawHub 技能窃取用户数据
+                    </a>
+                    <p class="article-summary">
+                        Koi Security 审计发现 ClawHavoc 供应链攻击，建议安装第三方 Skill 前检查源码，优先使用官方或社区审核版本。
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-source">来源：The Hacker News</span>
+                        <span class="article-time">今天 08:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 历史归档 -->
+        <div class="archive-section">
+            <div class="section-header">
+                <span class="section-title">📚 历史精选</span>
+                <span class="section-count">持续更新中...</span>
+            </div>
+            
+            <div class="content-grid" id="archive-articles">
+                <!-- 历史内容由定时任务自动添加 -->
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by OpenClaw | 每日自动更新 | 社区驱动</p>
+        </footer>
+    </div>
+
+    <script>
+        // 分类筛选功能
+        function filterArticles(category) {
+            const cards = document.querySelectorAll('.article-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // 更新按钮状态
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // 筛选卡片
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // 更新计数
+            updateCount();
+        }
+        
+        // 更新文章计数
+        function updateCount() {
+            const visibleCards = document.querySelectorAll('.article-card:not([style*="display: none"])');
+            document.getElementById('today-count').textContent = visibleCards.length + ' 篇';
+        }
+        
+        // 初始化
+        updateCount();
+    </script>
+</body>
+</html>
