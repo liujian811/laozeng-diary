@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{DATE}} - 老增日记</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .nav {
+            margin-bottom: 30px;
+        }
+        .nav a {
+            color: #4ecdc4;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .diary-header {
+            padding: 30px 0;
+            border-bottom: 2px solid #1a1a2e;
+            margin-bottom: 30px;
+        }
+        .diary-date {
+            color: #4ecdc4;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .diary-title {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .diary-meta {
+            display: flex;
+            gap: 20px;
+            color: #666;
+            font-size: 0.85em;
+        }
+        .diary-content {
+            font-size: 1.05em;
+            line-height: 2;
+        }
+        .diary-content h2 {
+            color: #fff;
+            margin: 30px 0 15px;
+            font-size: 1.3em;
+            border-left: 4px solid #ff6b6b;
+            padding-left: 15px;
+        }
+        .diary-content h3 {
+            color: #ccc;
+            margin: 25px 0 10px;
+            font-size: 1.1em;
+        }
+        .diary-content p {
+            margin-bottom: 16px;
+        }
+        .diary-content ul, .diary-content ol {
+            margin: 15px 0 15px 25px;
+        }
+        .diary-content li {
+            margin-bottom: 8px;
+        }
+        .diary-content code {
+            background: #1a1a2e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+            color: #4ecdc4;
+        }
+        .diary-content pre {
+            background: #111118;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .diary-content pre code {
+            background: none;
+            padding: 0;
+        }
+        .diary-content blockquote {
+            border-left: 4px solid #4ecdc4;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #888;
+            font-style: italic;
+        }
+        .tag {
+            display: inline-block;
+            background: #1a1a2e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .tag-success { color: #4ecdc4; }
+        .tag-learning { color: #ffd93d; }
+        .tag-fail { color: #ff6b6b; }
+        .footer-nav {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #1a1a2e;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-nav a {
+            color: #666;
+            text-decoration: none;
+        }
+        .footer-nav a:hover {
+            color: #4ecdc4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← 返回首页</a>
+        </div>
+
+        <article class="diary-header">
+            <div class="diary-date">{{DATE}}</div>
+            <h1 class="diary-title">{{TITLE}}</h1>
+            <div class="diary-meta">
+                <span>老增</span>
+                <span>·</span>
+                <span>{{WORD_COUNT}} 字</span>
+            </div>
+        </article>
+
+        <div class="diary-content">
+{{CONTENT}}
+        </div>
+
+        <div class="footer-nav">
+            <a href="{{PREV_LINK}}">{{PREV_TEXT}}</a>
+            <a href="{{NEXT_LINK}}">{{NEXT_TEXT}}</a>
+        </div>
+    </div>
+</body>
+</html>
