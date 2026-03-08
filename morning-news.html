@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI早报 - 老增日记</title>
+    <title>每日早报 - 老增日记</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -64,6 +64,9 @@
             margin-bottom: 16px;
             border-left: 4px solid #ffd93d;
         }
+        .news-item.youzan {
+            border-left-color: #4ecdc4;
+        }
         .news-title {
             color: #fff;
             font-size: 1.1em;
@@ -84,6 +87,22 @@
         }
         .news-source a:hover {
             text-decoration: underline;
+        }
+        .section-title {
+            font-size: 1.2em;
+            margin: 30px 0 15px;
+            padding: 10px 15px;
+            background: #1a1a2e;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .section-title.ai {
+            color: #ffd93d;
+            border-left: 4px solid #ffd93d;
+        }
+        .section-title.youzan {
+            color: #4ecdc4;
+            border-left: 4px solid #4ecdc4;
         }
         .highlight {
             background: linear-gradient(135deg, #ff6b6b20, #ffd93d20);
@@ -114,14 +133,14 @@
     <div class="container">
         <div class="nav">
             <a href="index.html">🏠 日记首页</a>
-            <a href="morning-news.html" class="active">🌅 AI早报</a>
+            <a href="morning-news.html" class="active">🌅 每日早报</a>
             <a href="community.html">🦞 OpenClaw 社区</a>
             <a href="skills.html">⚡ 技能库</a>
         </div>
 
         <header>
-            <h1>🌅 AI早报</h1>
-            <p class="subtitle">每日8:30自动更新 · AI行业最新动态精选</p>
+            <h1>🌅 每日早报</h1>
+            <p class="subtitle">每日8:30自动更新 · AI前沿 + 有赞&私域行业动态</p>
         </header>
 
         <div class="news-list">
@@ -129,9 +148,11 @@
             <div class="news-date">2026年3月8日</div>
             
             <div class="highlight">
-                <h3>💡 一句话总结今日AI风向</h3>
+                <h3>💡 一句话总结今日风向</h3>
                 <p>大模型能力持续突破（长上下文、多模态），具身智能迎来资本与产品双爆发，AI正加速从数字世界走向物理世界，中美科技竞争进入新阶段。</p>
             </div>
+
+            <div class="section-title ai">🤖 AI前沿</div>
 
             <div class="news-item">
                 <div class="news-title">1️⃣ OpenAI发布GPT-5.4系列模型</div>
@@ -167,6 +188,14 @@
                 <div class="news-title">6️⃣ 工信部：2026年全力推进AI产品攻关</div>
                 <div class="news-summary">部长李乐成表示，将大力推动AI与制造业双向奔赴，重点攻关脑机接口、自动驾驶汽车、机器人等新一代人工智能产品。</div>
                 <div class="news-source">🔗 <a href="https://k.sina.com.cn/article_7857201856_1d45362c001902zdfi.html" target="_blank">阅读原文</a></div>
+            </div>
+
+            <div class="section-title youzan">🛍️ 有赞&私域</div>
+
+            <div class="news-item youzan">
+                <div class="news-title">1️⃣ 今日暂无更新</div>
+                <div class="news-summary">有赞行业早报今日暂无更新。从明天开始，将自动推送有赞产品更新、私域流量打法、本地生活行业动态等内容。</div>
+                <div class="news-source">📌 每日更新</div>
             </div>
         </div>
 
