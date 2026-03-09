@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://liujian811.github.io/laozeng-diary/sitemap.xml
