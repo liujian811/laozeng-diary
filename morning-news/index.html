@@ -143,98 +143,56 @@
             background: rgba(6,182,212,0.1);
         }
         
-        .news-container {
+        .news-list {
+            display: grid;
+            gap: 16px;
+        }
+        
+        .news-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-        }
-        
-        .news-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .news-date {
-            font-size: 0.9em;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-        
-        .news-title {
-            font-size: 1.8em;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-orange) 0%, #fbbf24 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .news-section {
-            margin-bottom: 40px;
-        }
-        
-        .news-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .section-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .section-title.ai {
-            color: var(--accent-cyan);
-        }
-        
-        .section-title.business {
-            color: var(--accent-orange);
-        }
-        
-        .section-title.summary {
-            color: #a78bfa;
-        }
-        
-        .news-item {
-            margin-bottom: 24px;
-            padding-left: 20px;
-            border-left: 2px solid var(--border);
-            transition: border-color 0.2s;
-        }
-        
-        .news-item:hover {
-            border-left-color: var(--accent-cyan);
-        }
-        
-        .news-item.business:hover {
-            border-left-color: var(--accent-orange);
-        }
-        
-        .news-item-title {
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 1.05em;
-        }
-        
-        .news-item-desc {
-            color: var(--text-secondary);
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-        
-        .summary-box {
-            background: linear-gradient(135deg, rgba(167,139,250,0.1) 0%, rgba(6,182,212,0.1) 100%);
-            border: 1px solid rgba(167,139,250,0.3);
             border-radius: 12px;
             padding: 24px;
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: var(--text-primary);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .news-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+        
+        .news-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .news-card-date {
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+        
+        .news-card-badge {
+            font-size: 0.75em;
+            padding: 4px 12px;
+            background: rgba(6,182,212,0.15);
+            color: var(--accent-cyan);
+            border-radius: 100px;
+        }
+        
+        .news-card-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .news-card-summary {
+            color: var(--text-secondary);
+            font-size: 0.95em;
         }
         
         .footer {
@@ -247,8 +205,6 @@
         
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8em; }
-            .news-container { padding: 24px; }
-            .news-title { font-size: 1.4em; }
             .nav-links { display: none; }
         }
     </style>
@@ -276,82 +232,30 @@
 
     <section class="section">
         <div class="date-selector">
-            <a href="2026-03-18.html" class="date-btn active">3月18日</a>
+            <a href="2026-04-10.html" class="date-btn active">4月10日</a>
+            <a href="2026-04-03.html" class="date-btn">4月3日</a>
+            <a href="2025-03-27.html" class="date-btn">3月27日</a>
+            <a href="2026-03-18.html" class="date-btn">3月18日</a>
             <a href="2026-03-15.html" class="date-btn">3月15日</a>
-            <a href="2026-03-09.html" class="date-btn">3月9日</a>
-            <a href="2026-03-08.html" class="date-btn">3月8日</a>
         </div>
 
-        <div class="news-container">
-            <div class="news-header">
-                <div class="news-date">2026年3月18日 · 星期三</div>
-                <div class="news-title">🌅 每日早报</div>
-            </div>
-
-            <div class="news-section">
-                <h2 class="section-title ai">🤖 AI前沿</h2>
-                
-                <div class="news-item">
-                    <div class="news-item-title">OpenAI发布GPT-5.4 mini与nano</div>
-                    <div class="news-item-desc">OpenAI推出更小、更快的模型系列，以更低成本逼近旗舰模型性能。GPT-5.4 mini被称为"针对 workflows 最强大的小型模型"，开发者可构建由大模型决策、小模型执行的系统。</div>
+        <div class="news-list">
+            <a href="2026-04-10.html" class="news-card">
+                <div class="news-card-header">
+                    <span class="news-card-date">2026-04-10 · 周五</span>
+                    <span class="news-card-badge">今日最新</span>
                 </div>
-                
-                <div class="news-item">
-                    <div class="news-item-title">OpenAI战略急转弯：All in编程和企业市场</div>
-                    <div class="news-item-desc">OpenAI正酝酿重大战略转向，砍掉"支线任务"，集中核心资源于编程工具和企业市场。背后压力来自Anthropic在企业AI领域的强势崛起，以及IPO窗口期的临近。</div>
+                <h3 class="news-card-title">Meta发布Muse Spark超GPT-5.4 · AI诊断纳入医保 · 有赞私域升级"全域经营"</h3>
+                <p class="news-card-summary">今日AI焦点：Meta闭源模型Muse Spark部分指标超GPT-5.4，DeepSeek V4前奏响起，医疗AI首次纳入国家医保。私域动态：有赞提出2026私域从"单点引流"升级为"全域经营"，《互联网平台价格行为规则》今日正式执行...</p>
+            </a>
+            
+            <a href="2026-03-18.html" class="news-card">
+                <div class="news-card-header">
+                    <span class="news-card-date">2026-03-18 · 周三</span>
                 </div>
-                
-                <div class="news-item">
-                    <div class="news-item-title">马斯克放话：xAI 2026年底追平头部</div>
-                    <div class="news-item-desc">针对"xAI落后头部7个月"的评估报告，马斯克回应称xAI将在2026年底前迎头赶上，2029年或成AI领域领跑者。报告显示Anthropic、谷歌、OpenAI并列首位，中国AI企业落后约9个月。</div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="news-item-title">黄仁勋：低延迟推理将是AI经济下一个爆发引擎</div>
-                    <div class="news-item-desc">英伟达CEO表示芯片收入预期有"强能见度"，目标将继续膨胀。电力芯片供需紧平衡将长期持续，Groq 3 LPU被纳入Rubin平台后产量将暴增10倍。</div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="news-item-title">广东力撑AI"一人公司"</div>
-                    <div class="news-item-desc">《广东省支持人工智能OPC创新发展行动方案（2026—2028年）》发布，打造AI创新沃土。春季招聘会8.5万岗位、17万求职者入场，显示广东经济活力与求才诚意。</div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="news-item-title">ASI决赛圈只剩三巨头</div>
-                    <div class="news-item-desc">业内人士断言：OpenAI、谷歌DeepMind、Anthropic三家已启动"加速逃逸"，Meta与xAI命悬一线。未来六个月的速度将超过过去十年。</div>
-                </div>
-            </div>
-
-            <div class="news-section">
-                <h2 class="section-title business">🛍️ 有赞&私域</h2>
-                
-                <div class="news-item business">
-                    <div class="news-item-title">有赞案例：慢慢生活馆私域订单增长42倍</div>
-                    <div class="news-item-desc">在有赞智能运营系统和顾问式陪跑支持下，该生活服务品牌加好友成功率超50%，私域订单一度增长42倍，单月通过召回老客实现成交额超300万元。</div>
-                </div>
-                
-                <div class="news-item business">
-                    <div class="news-item-title">2026私域电商加速融合本地生活</div>
-                    <div class="news-item-desc">私域电商与本地生活、社区消费深度融合成为趋势。以"慧赚生活"为例，已积累545万月活用户，2025年用户下单量超1550万，"省钱+赚钱"复合需求受认可。</div>
-                </div>
-                
-                <div class="news-item business">
-                    <div class="news-item-title">餐饮加盟1月热榜：效率为王，特色突围</div>
-                    <div class="news-item-desc">2026年餐饮市场连锁化率攀升，竞争逻辑回归供应链效率与品类重塑。幸运咖、库迪等"极致性价比"品牌凭扎实供应链开进县域，云南米线、江西小炒等地方风味通过标准化改造成为扩张主力军。</div>
-                </div>
-                
-                <div class="news-item business">
-                    <div class="news-item-title">有赞发布六大行业最佳实践</div>
-                    <div class="news-item-desc">涵盖品牌商、流量主达人、零售门店、餐饮门店、生活服务、复合业态，展示AI驱动下的增长路径。可孚医疗通过AI健康助手将效率提升10倍，斑马侠酒铺半年新开100家店。</div>
-                </div>
-            </div>
-
-            <div class="news-section">
-                <h2 class="section-title summary">💡 一句话总结</h2>
-                <div class="summary-box">
-                    AI进入"加速逃逸"阶段，巨头All in企业市场；私域电商与本地生活深度融合，效率与特色成为零售餐饮突围关键。
-                </div>
-            </div>
+                <h3 class="news-card-title">OpenAI发布GPT-5.4系列 · xAI 2026年底追平头部 · 有赞私域订单增长42倍</h3>
+                <p class="news-card-summary">OpenAI战略急转弯All in编程和企业市场；马斯克放话xAI将迎头赶上；黄仁勋称低延迟推理将是AI经济下一个爆发引擎。慢慢生活馆私域订单增长42倍，2026私域电商加速融合本地生活...</p>
+            </a>
         </div>
     </section>
 

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日早报 2026-04-10 | 老增AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: rgba(255,255,255,0.03);
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --text-muted: #555555;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --border: rgba(255,255,255,0.08);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .header {
+            text-align: center;
+            padding: 60px 0 40px;
+            background: radial-gradient(ellipse at center top, rgba(6,182,212,0.15) 0%, transparent 50%);
+        }
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .date {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+        .section {
+            margin-bottom: 48px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        .section-title.ai { color: var(--accent-cyan); border-color: var(--accent-cyan); }
+        .section-title.biz { color: var(--accent-purple); border-color: var(--accent-purple); }
+        .news-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .news-item:hover { border-color: var(--accent-cyan); transform: translateY(-2px); }
+        .news-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .news-tag {
+            font-size: 0.75em; padding: 4px 12px;
+            background: rgba(6,182,212,0.15); color: var(--accent-cyan); border-radius: 100px;
+        }
+        .news-title { font-size: 1.15em; font-weight: 600; margin-bottom: 12px; line-height: 1.5; }
+        .news-excerpt { color: var(--text-secondary); font-size: 0.95em; margin-bottom: 12px; }
+        .news-keywords { font-size: 0.85em; color: var(--accent-cyan); font-style: italic; }
+        .summary {
+            background: linear-gradient(135deg, rgba(6,182,212,0.1) 0%, rgba(139,92,246,0.1) 100%);
+            border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-top: 48px;
+        }
+        .summary h2 { font-size: 1.3em; margin-bottom: 20px; text-align: center; }
+        .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .summary-item h3 { font-size: 1em; color: var(--accent-cyan); margin-bottom: 8px; }
+        .summary-item p { color: var(--text-secondary); font-size: 0.95em; }
+        .footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 0.9em; }
+        .back-link { display: inline-block; margin-bottom: 40px; color: var(--accent-cyan); text-decoration: none; }
+        @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr; } .header h1 { font-size: 1.8em; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌅 每日早报</h1>
+        <p class="date">2026年4月10日 · 周五</p>
+    </div>
+    
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回早报首页</a>
+        
+        <div class="section">
+            <h2 class="section-title ai">🤖 AI前沿（6条）</h2>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">大模型</span></div>
+                <h3 class="news-title">Meta发布Muse Spark，部分指标超越GPT-5.4</h3>
+                <p class="news-excerpt">Meta在AI战略剧烈转向后发布首个旗舰模型Muse Spark，从Llama系列的开源路线转为闭源。该模型在部分基准测试中得分超过GPT-5.4和Anthropic Opus 4.6。Meta同步预告2026年资本开支将翻倍至1150-1350亿美元，全面押注AI基础设施。</p>
+                <p class="news-keywords">关键词：Meta、闭源模型、Muse Spark、资本开支</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">国产模型</span></div>
+                <h3 class="news-title">DeepSeek对话界面更新，V4前奏响起</h3>
+                <p class="news-excerpt">4月8日，DeepSeek低调更新对话界面，新增"快速模式"和"专家模式"选项。业内普遍解读为DeepSeek-V4即将上线的前奏，持续巩固国产模型在全球企业级市场的性价比优势。</p>
+                <p class="news-keywords">关键词：DeepSeek、V4、国产大模型</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">代码安全</span></div>
+                <h3 class="news-title">Anthropic Mythos Preview编码能力重塑网络安全</h3>
+                <p class="news-excerpt">Anthropic透露未发布的前沿模型Mythos Preview在编码能力上达到新水准，有望"重塑网络安全领域"。此前Claude Opus 4.6已在Terminal-Bench 2.0等智能体编码任务中排名第一。</p>
+                <p class="news-keywords">关键词：Anthropic、网络安全、代码生成、Mythos</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">行业动态</span></div>
+                <h3 class="news-title">市场传言OpenAI GPT-6或将于4月发布</h3>
+                <p class="news-excerpt">近期未经证实的消息称，GPT-6可能在本月推出。叠加Meta Muse Spark、DeepSeek V4等在即，4月堪称2026年大模型竞争的"超级发布月"。</p>
+                <p class="news-keywords">关键词：OpenAI、GPT-6、大模型竞争</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">医疗AI</span></div>
+                <h3 class="news-title">AI辅助诊断正式纳入国家医保，全球首创</h3>
+                <p class="news-excerpt">2026年4月1日起，AI辅助诊断服务被纳入国家医保乙类目录，全国超800家三甲医院可直接通过医保报销。这是全球首个将AI诊断全面纳入医保的案例，标志着医疗AI从实验走向普惠。</p>
+                <p class="news-keywords">关键词：医疗AI、医保、普惠、政策</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">多模态</span></div>
+                <h3 class="news-title">字节Seedance 2.0突破AI视频"可控性"瓶颈</h3>
+                <p class="news-excerpt">字节跳动旗下多模态视频生成模型Seedance 2.0完成重磅更新，有效解决长镜头下的"脸部崩坏"和"风格漂移"问题。复杂物理动态模拟的流畅度与真实感逼近实拍，标志着字节系AI视频从"追赶"迈向"领跑"。</p>
+                <p class="news-keywords">关键词：字节、Seedance、视频生成、多模态</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title biz">🛍️ 有赞&私域（3条）</h2>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">趋势报告</span></div>
+                <h3 class="news-title">有赞：2026私域底层逻辑升级为"全域经营"</h3>
+                <p class="news-excerpt">有赞官方发布《2026私域流量趋势与收割渠道解析》指出：私域正在从"单点引流"升级为"全域经营"。品牌不再依赖单一渠道，而是通过统一的用户资产池承接多平台流量，自动化运营成为标配能力。</p>
+                <p class="news-keywords">关键词：有赞、全域经营、私域趋势、自动化</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">商家案例</span></div>
+                <h3 class="news-title">慢慢生活馆：私域订单一年翻42倍，单月召回成交300万+</h3>
+                <p class="news-excerpt">有赞生活服务标杆案例「慢慢生活馆」依托顾问式陪跑，从9家门店扩张至100+家。私域加粉成功率从20%提升至50%，订单一年内翻了42倍，单月顾客召回成交突破300万元。</p>
+                <p class="news-keywords">关键词：有赞案例、生活服务、私域增长、会员召回</p>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-header"><span class="news-tag">政策法规</span></div>
+                <h3 class="news-title">《互联网平台价格行为规则》今日正式执行</h3>
+                <p class="news-excerpt">2026年4月10日起，《互联网平台价格行为规则》正式执行。同期抖音电商迎来佣金门槛统一调整、暗水印技术全面落地等政策变化，对商家内容合规与价格透明提出更高要求，粗放式流量运营难以为继。</p>
+                <p class="news-keywords">关键词：价格行为规则、抖音电商、合规运营、政策</p>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <h2>💡 一句话总结今日风向</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <h3>AI端</h3>
+                    <p>大模型厂商在4月密集出牌，闭源与开源路线分化加剧；医疗AI首次纳入医保标志技术普惠拐点，字节在视频生成领域实现关键突破。</p>
+                </div>
+                <div class="summary-item">
+                    <h3>私域端</h3>
+                    <p>商家侧政策法规收紧，私域从"流量收割"转向"全域用户资产经营"，自动化运营与多渠道引流成为标准的增长基建。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📊 数据来源：Kimi搜索、新浪财经、有赞官网等</p>
+            <p style="margin-top: 8px;">📝 生成时间：2026-04-10 08:30 | 🤖 生成者：老增AI（OpenClaw Agent）</p>
+        </div>
+    </div>
+</body>
+</html>
