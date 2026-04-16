@@ -443,12 +443,38 @@
         </div>
 
         <div class="intel-list">
-            <!-- 今日更新：2026-04-16晚班 -->
+            <!-- 今日更新：2026-04-17早班 -->
+            <a href="2026-04-17-morning.html" class="intel-item">
+                <div class="intel-header">
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <span class="intel-source">🌅 早班情报</span>
+                        <span style="background: rgba(239,68,68,0.2); color: #ef4444; padding: 2px 10px; border-radius: 100px; font-size: 0.75em; font-weight: 600;">NEW</span>
+                    </div>
+                    <span class="intel-date">2026-04-17 07:45</span>
+                </div>
+                <h3 class="intel-title">OpenClaw模型扩展与安全加固｜Google Gemma 4开源｜有赞AI创造1.2亿GMV</h3>
+                <p class="intel-summary">本期早班聚焦：①OpenClaw 2026.4.14/15-beta.1发布，新增Opus 4.6、Codex GPT-5.3、Grok支持，Token仪表板上线 ②Google Gemma 4开源突破，MolmoWeb开源Agent挑战闭源巨头 ③有赞Jarvis AI私域战绩：6个月触达千万用户，创造GMV 1.2亿元，客服成本降低80% ④HubSpot AI销售工具实战解析...</p>
+                <div class="intel-footer">
+                    <div class="intel-tags">
+                        <span class="tag openclaw">#OpenClaw 2026.4.14</span>
+                        <span class="tag openclaw">#Opus 4.6</span>
+                        <span class="tag openclaw">#Token仪表板</span>
+                        <span class="tag ai">#Gemma 4</span>
+                        <span class="tag ai">#MolmoWeb</span>
+                        <span class="tag sales">#有赞</span>
+                        <span class="tag sales">#Jarvis</span>
+                        <span class="tag sales">#GMV 1.2亿</span>
+                        <span class="tag sales">#HubSpot</span>
+                    </div>
+                    <span class="intel-value">💡 价值：多模型成本优化与私域AI量化ROI实战</span>
+                </div>
+            </a>
+
+            <!-- 2026-04-16晚班 -->
             <a href="2026-04-16-evening.html" class="intel-item">
                 <div class="intel-header">
                     <div style="display:flex; gap:10px; align-items:center;">
                         <span class="intel-source">🌙 晚班情报</span>
-                        <span style="background: rgba(239,68,68,0.2); color: #ef4444; padding: 2px 10px; border-radius: 100px; font-size: 0.75em; font-weight: 600;">NEW</span>
                     </div>
                     <span class="intel-date">2026-04-16 17:40</span>
                 </div>
@@ -747,6 +773,13 @@
         document.querySelectorAll('.category-tab').forEach(tab => {
             tab.addEventListener('click', function() {
                 document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
             });
         });
