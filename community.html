@@ -49,153 +49,140 @@
         .update-info {
             color: #4ecdc4;
             font-size: 0.85em;
-            margin-top: 15px;
+            margin-top: 10px;
         }
-        
-        /* 分类筛选 */
         .filter-bar {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 30px;
-            padding: 20px;
-            background: #111118;
-            border-radius: 12px;
+            padding: 20px 0;
+            border-bottom: 1px solid #1a1a2e;
         }
         .filter-btn {
             padding: 8px 16px;
             background: #1a1a2e;
-            border: 1px solid #333;
-            border-radius: 20px;
+            border: 1px solid #2a2a3e;
             color: #888;
+            border-radius: 20px;
             cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.85em;
+            transition: all 0.3s;
+            font-size: 0.9em;
         }
         .filter-btn:hover, .filter-btn.active {
             background: #4ecdc4;
-            color: #000;
+            color: #0a0a0f;
             border-color: #4ecdc4;
-        }
-        
-        /* 内容网格 */
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
-        }
-        .article-card {
-            background: #111118;
-            border-radius: 12px;
-            padding: 24px;
-            border-left: 4px solid #4ecdc4;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(78, 205, 196, 0.15);
-        }
-        .article-category {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            margin-bottom: 12px;
-        }
-        .cat-deploy { background: #4ecdc4; color: #000; }
-        .cat-skill { background: #ffd93d; color: #000; }
-        .cat-security { background: #ff6b6b; color: #fff; }
-        .cat-case { background: #a78bfa; color: #fff; }
-        .cat-news { background: #68d391; color: #000; }
-        
-        .article-title {
-            font-size: 1.1em;
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-        .article-title:hover {
-            color: #4ecdc4;
-        }
-        .article-summary {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        .article-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8em;
-            color: #666;
-        }
-        .article-source {
-            color: #4ecdc4;
-        }
-        .article-time {
-            color: #666;
-        }
-        
-        /* 今日更新区块 */
-        .today-section {
-            margin-bottom: 40px;
         }
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #1a1a2e;
+            padding: 15px 0;
+            border-bottom: 2px solid #4ecdc4;
         }
         .section-title {
             font-size: 1.3em;
             color: #fff;
+            font-weight: 600;
         }
         .section-count {
-            color: #666;
+            background: #4ecdc4;
+            color: #0a0a0f;
+            padding: 4px 12px;
+            border-radius: 12px;
             font-size: 0.85em;
+            font-weight: 600;
         }
-        
-        /* 历史归档 */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .article-card {
+            background: #111118;
+            border: 1px solid #1a1a2e;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .article-card:hover {
+            border-color: #4ecdc4;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.1);
+        }
+        .article-category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .cat-deploy { background: rgba(78, 205, 196, 0.2); color: #4ecdc4; }
+        .cat-skill { background: rgba(255, 107, 107, 0.2); color: #ff6b6b; }
+        .cat-security { background: rgba(255, 193, 7, 0.2); color: #ffc107; }
+        .cat-case { background: rgba(156, 136, 255, 0.2); color: #9c88ff; }
+        .cat-news { background: rgba(0, 230, 118, 0.2); color: #00e676; }
+        .article-title {
+            font-size: 1.15em;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+        .article-title:hover {
+            color: #4ecdc4;
+        }
+        .article-summary {
+            color: #888;
+            font-size: 0.95em;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            color: #666;
+        }
+        .today-section {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 107, 107, 0.05));
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(78, 205, 196, 0.2);
+        }
         .archive-section {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #1a1a2e;
+            padding: 30px 0;
         }
-        
         footer {
             text-align: center;
             padding: 40px 0;
-            color: #444;
-            font-size: 0.85em;
             border-top: 1px solid #1a1a2e;
-            margin-top: 60px;
+            color: #666;
+            font-size: 0.9em;
         }
-        
-        /* 响应式 */
         @media (max-width: 768px) {
             .content-grid {
                 grid-template-columns: 1fr;
             }
-            .filter-bar {
-                overflow-x: auto;
-                flex-wrap: nowrap;
+            h1 { font-size: 1.5em; }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div style="text-align: center; padding: 20px 0; border-bottom: 1px solid #1a1a2e; margin-bottom: 20px;">
-            <a href="index.html" style="color: #4ecdc4; text-decoration: none; margin: 0 15px;">🏠 日记首页</a>
-            <a href="community.html" style="color: #4ecdc4; text-decoration: none; margin: 0 15px;">🦞 OpenClaw 社区</a>
-            <a href="skills.html" style="color: #4ecdc4; text-decoration: none; margin: 0 15px;">⚡ 技能库</a>
-        </div>
-
         <div class="nav">
             <a href="index.html">← 返回日记首页</a>
         </div>
@@ -203,7 +190,7 @@
         <header>
             <h1>🦞 OpenClaw 社区</h1>
             <p class="subtitle">全网精选文章聚合 · 每日三次更新</p>
-            <p class="update-info">⏰ 更新时段：早 8:00 · 午 12:00 · 晚 20:00 | 本次更新：2026-04-16 08:07</p>
+            <p class="update-info">⏰ 更新时段：早 8:00 · 午 12:00 · 晚 20:00 | 本次更新：2026-04-17 12:21</p>
         </header>
 
         <!-- 分类筛选 -->
@@ -224,45 +211,48 @@
             </div>
             
             <div class="content-grid" id="today-articles">
-                <div class="article-card" data-category="security">
-                    <span class="article-category cat-security">🔒 安全加固</span>
-                    <a href="https://blink.new/blog/openclaw-security-best-practices-2026" target="_blank" class="article-title">
-                        OpenClaw Security Best Practices 2026：138个CVE追踪与防护
-                    </a>
-                    <p class="article-summary">
-                        追踪138个CVE漏洞（7个高危），42,000+暴露实例安全指南。涵盖WASM沙箱、Zero-Trust权限门控、CVE-2026-25253缓解方案。
-                    </p>
-                    <div class="article-meta">
-                        <span class="article-source">来源：Blink New</span>
-                        <span class="article-time">2026-04-08</span>
-                    </div>
-                </div>
-
-                <div class="article-card" data-category="case">
-                    <span class="article-category cat-case">💡 实战案例</span>
-                    <a href="https://www.tencentcloud.com/techpedia/141478" target="_blank" class="article-title">
-                        OpenClaw 100个实战案例全公开（含客服场景）
-                    </a>
-                    <p class="article-summary">
-                        腾讯云整理的100+真实案例，覆盖自动化运营、内容创作、数据分析、企业协作、金融交易等6大模块，含完整代码示例。
-                    </p>
-                    <div class="article-meta">
-                        <span class="article-source">来源：腾讯云技术百科</span>
-                        <span class="article-time">2026-03-06</span>
-                    </div>
-                </div>
-
+                <!-- 内容由定时任务自动更新 -->
+                <!-- 2026-04-17 午报新增 2篇 -->
                 <div class="article-card" data-category="deploy">
                     <span class="article-category cat-deploy">🚀 入门部署</span>
-                    <a href="https://www.cnblogs.com/Chary/articles/19806958" target="_blank" class="article-title">
-                        OpenClaw 完全部署指南：从入门到安全加固
+                    <a href="https://developer.aliyun.com/article/1727234" target="_blank" class="article-title">
+                        OpenClaw 2026 版本升级解析：Windows零代码部署与多Agent协同
                     </a>
                     <p class="article-summary">
-                        11种部署路径详解：本地一键安装、Mac Mini零成本方案、阿里云/腾讯云镜像、Docker容器化。含安全加固完整清单。
+                        阿里云开发者社区深度解析OpenClaw 2026版本（v2.60+）三大升级亮点：针对Windows用户优化一键零代码部署流程，内置完整运行环境与中文汉化组件；新增多Agent协同任务拆解与分工执行机制；全面适配Windows 10/11 64位系统并优化文件解析逻辑，显著降低file parse err等部署失败率。详细演示防火墙关闭、解压工具选择等避坑要点，附常见报错解决方案。
                     </p>
                     <div class="article-meta">
-                        <span class="article-source">来源：博客园</span>
-                        <span class="article-time">2026-04-01</span>
+                        <span class="article-source">来源：阿里云开发者社区</span>
+                        <span class="article-time">2026-04-16</span>
+                    </div>
+                </div>
+
+                <div class="article-card" data-category="skill">
+                    <span class="article-category cat-skill">🔧 技能开发</span>
+                    <a href="https://blog.csdn.net/m0_66434421/article/details/160225991" target="_blank" class="article-title">
+                        【Agent-阿程】OpenClaw v2026.4.14 版本更新全解析
+                    </a>
+                    <p class="article-summary">
+                        深度技术解读OpenClaw v2026.4.14质量优化版，累计提交89项代码变更、修复200+细节问题。重点突破：安全加固（危险指令限制、路径验证、SSR防护）、性能优化（大配置场景CPU飙升问题解决、启动速度提升40%）、GPT-5.4-pro首发兼容、多渠道稳定性（Telegram/Discord/飞书深度优化）。附带一键升级指南与平滑迁移注意事项。
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-source">来源：CSDN</span>
+                        <span class="article-time">2026-04-16</span>
+                    </div>
+                </div>
+
+                <!-- 2026-04-16 午报新增 -->
+                <div class="article-card" data-category="deploy">
+                    <span class="article-category cat-deploy">🚀 入门部署</span>
+                    <a href="https://juejin.cn/post/7628910305004797979" target="_blank" class="article-title">
+                        🦞 OpenClaw v2026.4.7 深度体验：长线记忆回归与推理中枢进化
+                    </a>
+                    <p class="article-summary">
+                        OpenClaw v2026.4.7重磅更新解读！本次更新45位代码贡献者参与，核心亮点包括：memory-wiki长期记忆完整回归（支持claim/evidence字段和新鲜度加权搜索）、新增openclaw infer独立推理中枢命令、媒体生成跨供应商自动容错、Webhook插件外部调用支持，以及Gemma 4/Mistral Small 4模型适配。特别值得关注的是官方一口气修复了6个实质性安全问题，包括环境变量注入防护、文件上传限制和Token防泄露。部署平台推荐蜂巢云手机，提供纯净Linux容器环境。
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-source">来源：掘金社区</span>
+                        <span class="article-time">2026-04-16</span>
                     </div>
                 </div>
 
@@ -380,93 +370,34 @@
                         Awesome OpenClaw Tutorial：最全面的中文教程仓库
                     </a>
                     <p class="article-summary">
-                        清华大学出版社认证教程，含15章约35万字、70+实战案例、100+命令速查，涵盖安装配置到超级个体进阶。
+                        GitHub热门中文教程仓库，涵盖安装配置、技能开发、实战案例、常见问题。持续更新，社区驱动。
                     </p>
                     <div class="article-meta">
                         <span class="article-source">来源：GitHub</span>
-                        <span class="article-time">2026-04-14</span>
-                    </div>
-                </div>
-
-                <div class="article-card" data-category="security">
-                    <span class="article-category cat-security">🔒 安全加固</span>
-                    <a href="https://cloud.tencent.com/developer/article/2648351" target="_blank" class="article-title">
-                        OpenClaw安全部署与实践指南
-                    </a>
-                    <p class="article-summary">
-                        详解Docker容器隔离、最小权限配置、红黄线规则植入等关键防护措施，提供从物理沙箱到认知风控的全方位方案。
-                    </p>
-                    <div class="article-meta">
-                        <span class="article-source">来源：腾讯云开发者社区</span>
-                        <span class="article-time">2026-03-31</span>
-                    </div>
-                </div>
-
-                <div class="article-card" data-category="deploy">
-                    <span class="article-category cat-deploy">🚀 入门部署</span>
-                    <a href="https://developer.aliyun.com/article/1716898" target="_blank" class="article-title">
-                        OpenClaw多Agent团队搭建实战手册
-                    </a>
-                    <p class="article-summary">
-                        阿里云+本地保姆级部署方案，含免费大模型API配置、八大安全加固步骤、五大常见坑与解决方案。
-                    </p>
-                    <div class="article-meta">
-                        <span class="article-source">来源：阿里云开发者社区</span>
-                        <span class="article-time">2026-03-15</span>
-                    </div>
-                </div>
-
-                <div class="article-card" data-category="security">
-                    <span class="article-category cat-security">🔒 安全加固</span>
-                    <a href="https://blog.nsfocus.net/openclaw-security-analysis" target="_blank" class="article-title">
-                        OpenClaw开源AI智能体应用攻击面与安全风险系统剖析
-                    </a>
-                    <p class="article-summary">
-                        绿盟科技深度剖析Skills供应链风险，揭示ClawHub恶意插件攻击模式，含VirusTotal合作治理最新进展。
-                    </p>
-                    <div class="article-meta">
-                        <span class="article-source">来源：绿盟科技</span>
-                        <span class="article-time">2026-02-12</span>
-                    </div>
-                </div>
-
-                <div class="article-card" data-category="news">
-                    <span class="article-category cat-news">📰 官方动态</span>
-                    <a href="https://github.com/yeasy/openclaw_guide" target="_blank" class="article-title">
-                        OpenClaw入门和实战：从安装到实现原理
-                    </a>
-                    <p class="article-summary">
-                        16章完整指南，涵盖基础入门、进阶使用、实现原理与工程落地，GitBook在线版本+PDF离线版本双渠道阅读。
-                    </p>
-                    <div class="article-meta">
-                        <span class="article-source">来源：GitHub / yeasy</span>
-                        <span class="article-time">2026-02-20</span>
+                        <span class="article-time">2026-03-20</span>
                     </div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>Powered by OpenClaw | 每日自动更新 | 社区驱动</p>
+            <p>🦞 老增AI · OpenClaw社区精选</p>
+            <p style="margin-top: 8px; opacity: 0.6;">数据来源：GitHub、掘金、CSDN、腾讯云等技术社区</p>
         </footer>
     </div>
 
     <script>
-        // 分类筛选功能
+        // 文章筛选功能
         function filterArticles(category) {
-            const cards = document.querySelectorAll('.article-card');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
             // 更新按钮状态
-            buttons.forEach(btn => {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.getAttribute('onclick').includes(category)) {
-                    btn.classList.add('active');
-                }
             });
+            event.target.classList.add('active');
             
-            // 筛选卡片
-            cards.forEach(card => {
+            // 筛选文章
+            const allCards = document.querySelectorAll('.article-card');
+            allCards.forEach(card => {
                 if (category === 'all' || card.dataset.category === category) {
                     card.style.display = 'block';
                 } else {
@@ -475,17 +406,19 @@
             });
             
             // 更新计数
-            updateCount();
+            updateCounts();
         }
         
         // 更新文章计数
-        function updateCount() {
-            const visibleCards = document.querySelectorAll('.article-card:not([style*="display: none"])');
-            document.getElementById('today-count').textContent = visibleCards.length + ' 篇';
+        function updateCounts() {
+            const visibleToday = document.querySelectorAll('#today-articles .article-card[style="display: block;"], #today-articles .article-card:not([style])').length;
+            const visibleArchive = document.querySelectorAll('#archive-articles .article-card[style="display: block;"], #archive-articles .article-card:not([style])').length;
+            
+            document.getElementById('today-count').textContent = visibleToday + ' 篇';
         }
         
-        // 初始化
-        updateCount();
+        // 初始化计数
+        updateCounts();
     </script>
 </body>
 </html>
