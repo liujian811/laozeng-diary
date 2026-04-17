@@ -190,7 +190,7 @@
         <header>
             <h1>🦞 OpenClaw 社区</h1>
             <p class="subtitle">全网精选文章聚合 · 每日三次更新</p>
-            <p class="update-info">⏰ 更新时段：早 8:00 · 午 12:00 · 晚 20:00 | 本次更新：2026-04-17 12:21</p>
+            <p class="update-info">⏰ 更新时段：早 8:00 · 午 12:00 · 晚 20:00 | 本次更新：2026-04-17 17:44</p>
         </header>
 
         <!-- 分类筛选 -->
@@ -207,12 +207,53 @@
         <div class="today-section">
             <div class="section-header">
                 <span class="section-title">📅 今日精选</span>
-                <span class="section-count" id="today-count">5 篇</span>
+                <span class="section-count" id="today-count">8 篇</span>
             </div>
             
             <div class="content-grid" id="today-articles">
                 <!-- 内容由定时任务自动更新 -->
-                <!-- 2026-04-17 午报新增 2篇 -->
+                <!-- 2026-04-17 午报新增 1篇 -->
+                <div class="article-card" data-category="news">
+                    <span class="article-category cat-news">📰 官方动态</span>
+                    <a href="https://juejin.cn/post/7629503574842834994" target="_blank" class="article-title">
+                        OpenClaw 2026.4.15：默认切换至Opus 4.7，新增Gemini TTS语音
+                    </a>
+                    <p class="article-summary">
+                        OpenClaw 2026.4.15版本与Claude Opus 4.7同步发布。核心变更：默认Anthropic模型从Opus 4.6切换至Opus 4.7；新增Gemini TTS语音合成开箱即用，无需额外配置；Active Memory智能记忆插件正式可用，支持LanceDB云存储和RAG检索；底层内存管理和安全机制重构。GitHub Copilot同步支持Claude Opus 4.7。OpenClaw随旗舰模型快速跟进，完整语音和记忆能力使其成为目前功能最全面的开源AI Agent框架。
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-source">来源：掘金社区</span>
+                        <span class="article-time">2026-04-17</span>
+                    </div>
+                </div>
+
+                <div class="article-card" data-category="news">
+                    <span class="article-category cat-news">📰 官方动态</span>
+                    <a href="http://se-office.ruc.edu.cn/xwdt/0bfe0849cb104802be236b639e05b797.htm" target="_blank" class="article-title">
+                        人民大学人工智能治理科普 | OpenClaw架构介绍
+                    </a>
+                    <p class="article-summary">
+                        中国人民大学信息学院人工智能治理研究院发布的OpenClaw深度科普文章。详解OpenClaw星型架构（网关中心化设计）、四层上下文组装机制（基础提示词、技能列表、历史记录、知识备忘录）、ReAct智能体循环执行流程。特别值得关注的是文章深度阐述了Skill技能系统如何从单一产品功能演变为跨平台能力描述协议，以及OpenClaw的三层记忆机制（短期会话、压缩摘要、长期MEMORY.md）如何让AI"越用越懂你"。适合希望系统理解OpenClaw内部机制的技术人员。
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-source">来源：中国人民大学人工智能治理研究院</span>
+                        <span class="article-time">2026-04-07</span>
+                    </div>
+                </div>
+
+                <div class="article-card" data-category="deploy">
+                    <span class="article-category cat-deploy">🚀 入门部署</span>
+                    <a href="https://cloud.tencent.com/developer/article/2649054" target="_blank" class="article-title">
+                        全网最详细！OpenClaw 接入飞书十步法！保姆级指南
+                    </a>
+                    <p class="article-summary">
+                        腾讯云社区权威实战教程，术哥无界写的OpenClaw飞书接入十步法。完整演示从创建飞书应用、配置必需权限（im:message系列、contact:user.base:readonly等）、获取App ID和App Secret，到安装飞书插件、配置事件回调的全流程。特别适合小白用户的"保姆式"图文指引，包含每个步骤的截图演示和常见问题排查。可实现手机飞书内直接调用AI编程助手，无论出差地铁还是咖啡厅都能让AI帮忙写代码、Review代码、生成技术方案。
+                    </p>
+                    <div class="article-meta">
+                        <span class="article-source">来源：腾讯云社区</span>
+                        <span class="article-time">2026-04-01</span>
+                    </div>
+                </div>
                 <div class="article-card" data-category="deploy">
                     <span class="article-category cat-deploy">🚀 入门部署</span>
                     <a href="https://developer.aliyun.com/article/1727234" target="_blank" class="article-title">
