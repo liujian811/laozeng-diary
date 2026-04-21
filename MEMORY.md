@@ -18,11 +18,14 @@
 - **厌恶**：冗长汇报、没有观点的长文、404错误
 - **高频指令**："继续优化"、"生成方案"、"检查"
 
-## 近期AI情报要点（2026-04-12晚班更新）
-- **OpenClaw**：4月7-11日连续五天发布更新，v2026.4.10发布Active Memory插件，Agent开始主动记忆用户偏好和上下文，不再需要手动说"记住这个"。同时新增Codex内置Provider和macOS MLX本地语音合成。
-- **资本动态**：Mistral AI完成8.3亿美元债务融资；2026年Q1全球startup融资达2970亿美元（AI主导）；AI芯片融资白热化，Cerebras 10亿、Rebellions 4亿、MatX 5亿。
-- **销售AI**：Amazon预测性个性化引擎ROI达300%；Sephora虚拟试妆+AI聊天机器人带来11%销售提升、30%退货降低；烘焙行业数字化忠诚系统成为明确趋势。
-- **建议给刘总**：在药店/烘焙垂直赛道尽快跑通"AI工具+私域运营"标准化方案，用OpenClaw的Active Memory打造有专属记忆的门店AI助手。
+## 近期AI情报要点（2026-04-21晚班更新）
+- **OpenClaw**：v2026.4.15发布，Gemini TTS原生支持、Model Auth状态卡、Memory-LanceDB云存储、LocalModelLean模式。GitHub 335K+ Stars，ClawHub 5,700+技能。平台从"功能爆发期"进入"生产可靠性深耕期"。
+- **算力竞赛白热化**：Cerebras Systems冲刺IPO，目标估值350亿美元（4年营收增长19倍），OpenAI 200亿美元超级订单。Jeff Bezos Project Prometheus接近100亿美元融资。非GPU路线正在重塑AI芯片格局。
+- **Agent基础设施成熟**：Anthropic发布Claude Design（AI设计工具）和Claude Managed Agents（官方Harness托管服务），Claude Code年营收25亿美元。OpenClaw以开源Harness领导者身份稳居生态核心。
+- **微信AI Agent Q3上线**：腾讯基于13.6亿月活用户和2万亿+小程序GMV生态构建微信AI Agent，私域运营竞争格局将根本改变。有赞商家有望优先获得接口对接。
+- **销售AI落地鸿沟**：88%企业采用AI销售工具，但仅39%看到明确ROI。核心差距在数据质量和workflow redesign。Gartner预测2027年95%销售研究将从AI开始。
+- **私域AI实测有效**：微伴助手合规AI违规率降92%、客服效率提升3倍；微盛企微管家SVIP转化率提升35%。2026微信私域AI运营已形成5步法标准流程。
+- **建议给刘总**：①本周梳理客户数据质量，评估企微SCRM+AI接入 ②本月跑通"加企微→AI欢迎→需求判断→人工跟进"最小闭环 ③Q2-Q3布局微信AI Agent接入准备，确保有赞+企微+AI三层架构可快速响应
 
 ## 技术栈与存储习惯
 - **网站托管**：GitHub Pages（laozeng-diary仓库）
