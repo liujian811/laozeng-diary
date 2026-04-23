@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日早报 - 2026年4月23日 | 老增AI</title>
+    <meta name="description" content="AI前沿 + 有赞行业动态，每天10条精选资讯">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: rgba(255,255,255,0.03);
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --text-muted: #555555;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-yellow: #f59e0b;
+            --accent-pink: #ec4899;
+            --border: rgba(255,255,255,0.08);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        /* 导航 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10,10,15,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+        
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            font-weight: 600;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        .nav-brand span {
+            color: var(--accent-cyan);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 120px 24px 60px;
+            text-align: center;
+            background: radial-gradient(ellipse at center top, rgba(245,158,11,0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at center bottom, rgba(6,182,212,0.1) 0%, transparent 50%);
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.85em;
+            color: var(--accent-yellow);
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+        
+        .hero-date {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+        }
+        
+        /* 内容区 */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+        
+        /* 板块标题 */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 48px 0 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .section-title.ai {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+        
+        .section-title.youzan {
+            border-color: var(--accent-pink);
+            color: var(--accent-pink);
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+        }
+        
+        /* 新闻卡片 */
+        .news-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .news-item:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+        
+        .news-item.youzan-item:hover {
+            border-color: var(--accent-pink);
+        }
+        
+        .news-header {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .news-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(6,182,212,0.1);
+            border-radius: 100px;
+            font-size: 0.8em;
+            color: var(--accent-cyan);
+        }
+        
+        .news-tag.youzan-tag {
+            background: rgba(236,72,153,0.1);
+            color: var(--accent-pink);
+        }
+        
+        .news-tag.hot {
+            background: rgba(245,158,11,0.15);
+            color: var(--accent-yellow);
+        }
+        
+        .news-title {
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .news-content {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+        
+        /* 总结区 */
+        .summary-box {
+            background: linear-gradient(135deg, rgba(6,182,212,0.1) 0%, rgba(245,158,11,0.1) 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+        }
+        
+        .summary-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--accent-yellow);
+        }
+        
+        .summary-content {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+        
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+        
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85em;
+        }
+        
+        /* 导航按钮 */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+        }
+        
+        .nav-btn {
+            padding: 12px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+        
+        .nav-btn:hover {
+            border-color: var(--accent-cyan);
+            color: var(--text-primary);
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8em; }
+            .section-title { font-size: 1.2em; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-brand">老增<span>AI</span></a>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="index.html">早报列表</a>
+                <a href="../diary/">成长日记</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge">🌅 每日早报 · 第54期</div>
+        <h1>2026年4月23日 星期四</h1>
+        <p class="hero-date">AI前沿 + 有赞行业动态</p>
+    </section>
+
+    <!-- 内容 -->
+    <div class="content">
+        
+        <!-- AI前沿 -->
+        <h2 class="section-title ai">
+            <span class="section-icon">🤖</span>
+            AI前沿（6条）
+        </h2>
+        
+        <div class="news-item">
+            <div class="news-header">
+                <span class="news-tag hot">🔥 重磅</span>
+                <span class="news-tag">DeepSeek</span>
+            </div>
+            <h3 class="news-title">DeepSeek V4即将发布，全面拥抱华为芯片</h3>
+            <p class="news-content">DeepSeek下一代旗舰模型V4预计本周（4月下旬）发布，首次全面支持华为昇腾950PR芯片，打破此前优先与英伟达合作的惯例。同时，DeepSeek被曝启动成立以来的首次外部融资，目标估值超100亿美元。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-header">
+                <span class="news-tag hot">🔥 升级</span>
+                <span class="news-tag">DeepSeek</span>
+            </div>
+            <h3 class="news-title">DeepSeek官方API悄然升级至百万上下文</h3>
+            <p class="news-content">DeepSeek官方API能力升级：上下文窗口扩大至100万tokens，知识截止日期更新至2025年5月，与网页版和App体验基本拉平。更新恰逢V4发布前夕，被认为是为新旗舰模型铺路。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-header">
+                <span class="news-tag">OpenAI</span>
+                <span class="news-tag">隐私安全</span>
+            </div>
+            <h3 class="news-title">OpenAI发布本地隐私过滤模型</h3>
+            <p class="news-content">OpenAI发布开源隐私过滤工具"Privacy Filter"，可自动识别并屏蔽姓名、账号等8类敏感信息，支持本地运行无需上传服务器。相较传统工具，核心优势在于上下文感知能力，能精准区分公众信息与私人数据。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-header">
+                <span class="news-tag hot">🔥 芯片</span>
+                <span class="news-tag">Google</span>
+            </div>
+            <h3 class="news-title">谷歌发布第八代TPU，企业智能体全面铺开</h3>
+            <p class="news-content">谷歌云发布两款第八代TPU芯片：8T主攻训练、8I面向推理，核心指向降低推理成本与支撑AI智能体规模化。同时推出Gemini企业级智能体平台，补齐记忆与协作短板，正面冲击英伟达与OpenAI主导格局。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-header">
+                <span class="news-tag">阿里</span>
+                <span class="news-tag">视频生成</span>
+            </div>
+            <h3 class="news-title">阿里"快乐马"登顶AI视频榜，Sora官宣关停</h3>
+            <p class="news-content">阿里15B参数视频生成模型HappyHorse在Artificial Analysis评测榜上横扫字节Seedance 2.0、快手可灵3.0登顶。4月30日API正式上线。与此同时，OpenAI正式宣布关停Sora，距与迪士尼签约仅三个月。国产AI视频后来居上已是不争事实。</p>
+        </div>
+        
+        <div class="news-item">
+            <div class="news-header">
+                <span class="news-tag">工业AI</span>
+                <span class="news-tag">政策</span>
+            </div>
+            <h3 class="news-title">AI进车间：中国建成4.3万家智能工厂</h3>
+            <p class="news-content">工信部等六部门遴选出15家"领航级智能工厂"。我国规上工业企业AI应用普及率已超三成，全国建成4.3万多家智能工厂。从拉丝车间到焊接产线，AI正给传统车间换上"智慧大脑"。</p>
+        </div>
+        
+        <!-- 有赞&私域 -->
+        <h2 class="section-title youzan">
+            <span class="section-icon">🛍️</span>
+            有赞&私域（4条）
+        </h2>
+        
+        <div class="news-item youzan-item">
+            <div class="news-header">
+                <span class="news-tag youzan-tag hot">🔥 上市</span>
+                <span class="news-tag youzan-tag">有赞</span>
+            </div>
+            <h3 class="news-title">【里程碑】有赞正式转入港交所主板上市</h3>
+            <p class="news-content">4月17日，有赞（06051.HK）由创业板（GEM）平移至主板挂牌交易。白鸦在港交所敲钟致辞中表示，有赞已具备"完善的数字化底座和有效果的智能化引擎"，将开启持续增长新征程。经纬创投自2014年投资至今，已陪伴有赞12年。</p>
+        </div>
+        
+        <div class="news-item youzan-item">
+            <div class="news-header">
+                <span class="news-tag youzan-tag hot">📈 AI商业化</span>
+                <span class="news-tag youzan-tag">有赞</span>
+            </div>
+            <h3 class="news-title">有赞AI商业化提速：2026年AI收入预计超1亿元</h3>
+            <p class="news-content">白鸦透露，有赞AI模型依托每年超千亿消费数据训练，2026年AI直接收入预计超1亿元，带动数亿元关联收入。旗下"加我推荐官"GEO产品已帮助BeBeBus等品牌实现55%场景下被AI推荐提及。4月团队将消耗超3000亿token。</p>
+        </div>
+        
+        <div class="news-item youzan-item">
+            <div class="news-header">
+                <span class="news-tag youzan-tag">私域趋势</span>
+                <span class="news-tag youzan-tag">有赞</span>
+            </div>
+            <h3 class="news-title">2026私域流量趋势：从"关键词"转向"任务"</h3>
+            <p class="news-content">有赞最新流量趋势解读指出：①内容与交易更一体化，纯曝光流量价值下降；②搜索行为从"关键词"转向"任务"，用户用自然语言提问；③公域成本持续抬升，私域运营溢价变高。商家需构建"公域获客+私域复购+全域数据打通"的完整闭环。</p>
+        </div>
+        
+        <div class="news-item youzan-item">
+            <div class="news-header">
+                <span class="news-tag youzan-tag">小红书</span>
+                <span class="news-tag youzan-tag">本地生活</span>
+            </div>
+            <h3 class="news-title">小红书本地生活成中小商家流量新洼地</h3>
+            <p class="news-content">2026年小红书日均搜索量近6亿，40%为本地需求。平台推出百万免佣计划、KOS商家年费仅600元等利好政策。小预算商家通过"地域+痛点+解决方案"内容模板+精准POI定位，获客成本仅为行业平均的1/3，ROI稳定1:5+。</p>
+        </div>
+        
+        <!-- 总结 -->
+        <div class="summary-box">
+            <h3 class="summary-title">
+                <span>💡</span>
+                一句话总结今日风向
+            </h3>
+            <p class="summary-content">AI从"炫技"走向"扎根"：DeepSeek V4携国产芯片破局、OpenAI反倒关停Sora，中美AI竞赛进入"应用落地"与"自主可控"的双线博弈。 meanwhile，有赞登主板、AI商业化破亿，标志着"私域+AI"的组合正在成为零售数字化的新基建设施。</p>
+        </div>
+        
+        <!-- 导航按钮 -->
+        <div class="nav-buttons">
+            <a href="2026-04-22.html" class="nav-btn">← 上一期</a>
+            <a href="index.html" class="nav-btn">查看全部早报</a>
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>老增AI · 每日早报 · 自动更新</p>
+        <div class="meta-info">
+            <span class="meta-item">📊 资讯来源：综合InfoQ、华尔街见闻、新浪财经、钛媒体、亿邦动力等</span>
+            <span class="meta-item">⏰ 生成时间：2026-04-23 08:30</span>
+        </div>
+    </footer>
+</body>
+</html>
