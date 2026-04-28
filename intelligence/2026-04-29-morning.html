@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI情报早班 - 2026年4月29日 | OpenClaw 350K星里程碑 · Agentic AI革命 · 销售AI量化ROI实战</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e8e8e8;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid rgba(233, 69, 96, 0.5);
+            margin-bottom: 40px;
+        }
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #fff, #a0d2eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1em;
+        }
+        .section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .section h2 {
+            color: #e94560;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: #e94560;
+            border-radius: 2px;
+        }
+        .news-item {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid #e94560;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 12px 12px 0;
+        }
+        .news-item h3 {
+            color: #fff;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .meta {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .meta a {
+            color: #4dabf7;
+            text-decoration: none;
+        }
+        .meta a:hover {
+            text-decoration: underline;
+        }
+        .content p {
+            margin-bottom: 10px;
+            color: #c8c8c8;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .tag {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            background: rgba(255,255,255,0.1);
+            color: #a0a0a0;
+        }
+        .tag.openclaw { background: rgba(6,182,212,0.15); color: #06b6d4; }
+        .tag.ai { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .tag.sales { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .value-box {
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .value-box h4 {
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        .value-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .value-box li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .value-box li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #e94560;
+        }
+        .highlight {
+            background: rgba(255,255,255,0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #fff;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #e94560;
+        }
+        .stat-label {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            color: #666;
+        }
+        .cta {
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8em; }
+            .container { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="date-badge">🌅 早班情报 · 2026年4月29日 07:45 CST</div>
+            <h1>AI情报早班更新</h1>
+            <p class="subtitle">OpenClaw 350K星里程碑 · Agentic AI革命 · 销售AI量化ROI实战</p>
+        </header>
+
+        <!-- OpenClaw最新动态 -->
+        <div class="section">
+            <h2>🦊 OpenClaw最新动态</h2>
+
+            <div class="news-item">
+                <h3>OpenClaw GitHub突破350.6K Stars，60天超越React十年积累</h3>
+                <div class="meta">来源：<a href="https://www.getpanto.ai/blog/openclaw-ai-platform-statistics" target="_blank">OpenClaw Platform Statistics</a> · 2026-04-08</div>
+                <div class="content">
+                    <p>OpenClaw已成为GitHub史上增长最快的开源项目。截至2026年4月8日：</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">350.6K</div>
+                            <div class="stat-label">GitHub Stars</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">70.4K</div>
+                            <div class="stat-label">Forks</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1.6K</div>
+                            <div class="stat-label">Contributors</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">40K+</div>
+                            <div class="stat-label">公开部署实例</div>
+                        </div>
+                    </div>
+                    <p>项目起源于2025年11月的Clawdbot，历经Moltbot，最终于2026年1月29日正式定名OpenClaw。深圳和无锡地方政府已为OpenClaw相关项目提供<span class="highlight">最高200万元人民币（约29万美元）</span>的补贴。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag openclaw">#OpenClaw</span>
+                    <span class="tag openclaw">#GitHub 350K</span>
+                    <span class="tag openclaw">#开源生态</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h3>OpenClaw v2026.3.22里程碑发布：45+新功能，ClawHub原生集成</h3>
+                <div class="meta">来源：<a href="https://skywork.ai/skypage/en/openclaw-ai-news-trends/2038515421708894208" target="_blank">Skywork AI</a> · 2026-03-23</div>
+                <div class="content">
+                    <p>v2026.3.22是OpenClaw迄今最重大的版本更新，核心亮点：</p>
+                    <ul style="margin-left: 20px; color: #c8c8c8; margin-bottom: 10px;">
+                        <li><strong>ClawHub原生集成</strong>：技能市场正式取代npm成为默认安装渠道，一键安装技能生态</li>
+                        <li><strong>GPT-5.40支持</strong>：默认引擎升级，支持100万token超长上下文处理</li>
+                        <li><strong>SSH/OpenShell沙箱</strong>：可插拔沙箱后端，将任务执行隔离到远程服务器，大幅降低prompt injection风险</li>
+                        <li><strong>SQLite向量嵌入</strong>：原生向量数据库支持，Agent记忆能力质的飞跃</li>
+                    </ul>
+                    <p>NVIDIA同期发布<span class="highlight">NemoClaw</span>开源安全栈，专为OpenClaw设计隐私和安全控制层，获Jensen Huang公开背书。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag openclaw">#OpenClaw v2026.3.22</span>
+                    <span class="tag openclaw">#ClawHub</span>
+                    <span class="tag openclaw">#GPT-5.40</span>
+                    <span class="tag openclaw">#SSH沙箱</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h3>安全警报：CVE-2026-25253与ClawHavoc供应链攻击</h3>
+                <div class="meta">来源：OpenClaw Security Advisory · 2026-02-23</div>
+                <div class="content">
+                    <p>OpenClaw高速增长同时暴露安全短板：</p>
+                    <ul style="margin-left: 20px; color: #c8c8c8; margin-bottom: 10px;">
+                        <li><strong>CVE-2026-25253</strong>：高危漏洞允许攻击者通过token窃取执行远程代码，已在v2026.2.23中修复</li>
+                        <li><strong>ClawHavoc供应链攻击</strong>：恶意技能通过ClawHub分发macOS信息窃取器，230+恶意技能被检测</li>
+                        <li><strong>40,000+实例暴露公网</strong>：安全研究人员发现大量未加固部署</li>
+                    </ul>
+                    <p>项目方已将<span class="highlight">50%资源投入安全与沙箱</span>，WASM沙箱即将成为默认配置。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag openclaw">#CVE-2026-25253</span>
+                    <span class="tag openclaw">#ClawHavoc</span>
+                    <span class="tag openclaw">#安全加固</span>
+                </div>
+            </div>
+
+            <div class="value-box">
+                <h4>💡 对销售业务的价值</h4>
+                <ul>
+                    <li>OpenClaw 350K星验证Agentic AI方向正确，销售团队部署AI助手的社区支持空前强大</li>
+                    <li>ClawHub原生集成意味着销售自动化技能（CRM同步、邮件分类、客户研究）可一键安装</li>
+                    <li>SSH沙箱让企业级部署更安全，IT部门更容易批准销售团队使用OpenClaw</li>
+                    <li>深圳/无锡200万补贴信号：Agentic AI已被政府认定为战略性新兴产业</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- AI行业重大新闻 -->
+        <div class="section">
+            <h2>🚀 AI行业重大新闻</h2>
+
+            <div class="news-item">
+                <h3>Morgan Stanley预警：2026上半年 transformative AI突破即将到来</h3>
+                <div class="meta">来源：<a href="https://www.evoart.ai/blog/morgan-stanley-warns-major-ai-breakthrough-coming-2026" target="_blank">EvoArt AI</a> · 2026-03-17</div>
+                <div class="content">
+                    <p>摩根士丹利发布重磅报告，警告AI领域即将在2026年上半年迎来<span class="highlight">"transformative leap"</span>，而大多数企业和基础设施并未做好准备。</p>
+                    <p>核心预测领域：</p>
+                    <ul style="margin-left: 20px; color: #c8c8c8; margin-bottom: 10px;">
+                        <li><strong>自主Agent系统</strong>：从生成式AI转向能自主规划、执行、适应的Agentic AI</li>
+                        <li><strong>推理与演绎能力</strong>：NVIDIA黄仁勋宣布"演绎推理时代已到来"</li>
+                        <li><strong>物理AI与机器人</strong>：北京半马机器人以不到2小时完赛，较上一年2小时40分钟大幅提升</li>
+                        <li><strong>能源危机</strong>：美国到2028年可能面临9-18吉瓦电力短缺，AI算力需求爆发式增长</li>
+                    </ul>
+                    <p>报告同时指出，<span class="highlight"> scaling laws 仍在生效</span>——增加10倍算力可有效将模型智能翻倍。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag ai">#Morgan Stanley</span>
+                    <span class="tag ai">#Agentic AI</span>
+                    <span class="tag ai">#推理能力</span>
+                    <span class="tag ai">#物理AI</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h3>OpenAI GPT-5.4发布 + Claude Mythos泄露：双雄争霸白热化</h3>
+                <div class="meta">来源：TechCrunch / Mashable · 2026-03-14至04-07</div>
+                <div class="content">
+                    <p>2026年3月AI巨头密集发布，竞争进入白热化：</p>
+                    <ul style="margin-left: 20px; color: #c8c8c8; margin-bottom: 10px;">
+                        <li><strong>OpenAI GPT-5.4</strong>：支持100万token上下文，在GDPVal基准测试达83%分数，接近专家水平</li>
+                        <li><strong>Anthropic Claude Mythos</strong>：泄露帖子称其将成"迄今最强模型"，实现"阶跃式提升"，已给网络安全研究员提前访问</li>
+                        <li><strong>Claude Code源码泄露</strong>：50万行代码被误发布至npm，内含"自愈记忆"系统、自主KAIROS后台Agent和"卧底模式"</li>
+                        <li><strong>Google Gemini 3.1</strong>：Flash-Lite发布，原生多模态能力整合文本、图像、音频、视频处理</li>
+                    </ul>
+                    <p>Anthropic年化收入已突破<span class="highlight">300亿美元</span>，80%来自企业客户。CEO turnover趋势：可口可乐、沃尔玛、Adobe CEO离职均提及AI变革因素。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag ai">#GPT-5.4</span>
+                    <span class="tag ai">#Claude Mythos</span>
+                    <span class="tag ai">#Gemini 3.1</span>
+                    <span class="tag ai">#多模态AI</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h3>NVIDIA GTC 2026：$1万亿AI需求预测，NemoClaw开源安全栈发布</h3>
+                <div class="meta">来源：NVIDIA GTC 2026 · 2026-03-20</div>
+                <div class="content">
+                    <p>黄仁勋在GTC 2026 keynote中宣布：<span class="highlight">到2027年AI芯片需求将达1万亿美元</span>，而NVIDIA产能只能满足到2028年。</p>
+                    <p>同期发布NemoClaw——专为OpenClaw设计的开源隐私安全控制栈，获得社区热烈响应。NVIDIA将OpenClaw评价为<span class="highlight">"近年来最重要的软件发布之一"</span>。</p>
+                    <p>机器人方面：北京半马机器人完赛时间从2小时40分钟缩短至不到2小时，宇树科技营收增长335%。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag ai">#NVIDIA GTC</span>
+                    <span class="tag ai">#NemoClaw</span>
+                    <span class="tag ai">#$1万亿需求</span>
+                    <span class="tag ai">#机器人</span>
+                </div>
+            </div>
+
+            <div class="value-box">
+                <h4>💡 对销售业务的价值</h4>
+                <ul>
+                    <li>GPT-5.4的100万token上下文=可一次性分析整个客户数据库，销售洞察质的飞跃</li>
+                    <li>Agentic AI从"回答"转向"执行"，销售流程中70%的日常运营工作可被自动化</li>
+                    <li>多模态AI让销售材料（视频、PPT、音频）自动生成成为可能</li>
+                    <li>CEO turnover信号：不会用AI的销售团队将在12-18个月内被会用的团队取代</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- AI在销售/私域领域的应用 -->
+        <div class="section">
+            <h2>💼 AI在销售/私域领域的应用案例</h2>
+
+            <div class="news-item">
+                <h3>HubSpot Breeze AI实战：从预测线索培育到AI外展代理</h3>
+                <div class="meta">来源：<a href="https://blog.revpartners.io/en/revops-articles/hubspot-automation-guide-2026" target="_blank">RevPartners</a> · 2026-03-06</div>
+                <div class="content">
+                    <p>HubSpot 2026年Breeze AI系统成为销售自动化标杆，核心功能：</p>
+                    <ul style="margin-left: 20px; color: #c8c8c8; margin-bottom: 10px;">
+                        <li><strong>AI Prospecting Agent</strong>：自动研究潜在客户最新新闻和业务目标，在Sales Workspace起草个性化开场白</li>
+                        <li><strong>Predictive Lead Nurturing</strong>：Data Agent扫描公司网站和LinkedIn，自动更新Smart Properties并分配个性化邮件序列</li>
+                        <li><strong>高意向警报</strong>：Buyer Intent功能实时追踪目标账户访问，Company News Signal（扩张、监管批准）触发即时销售介入</li>
+                        <li><strong>智能线索轮转</strong>：Round Robin按工作负载分配，Business Day Delay确保跟进仅在客户工作时段发送</li>
+                    </ul>
+                    <p>数据验证：<span class="highlight">80%营销自动化用户生成更多线索，77%转化率提升</span>。70%客户反馈采用HubSpot后效率提升。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag sales">#HubSpot Breeze</span>
+                    <span class="tag sales">#AI Prospecting</span>
+                    <span class="tag sales">#线索培育</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h3>AI销售自动化数据全景：58%团队用AI写 outreach，BeaverCraft 271% ROI</h3>
+                <div class="meta">来源：Prospeo / Ability.ai · 2026-04</div>
+                <div class="content">
+                    <p>2026年销售自动化已进入数据驱动时代：</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">58%</div>
+                            <div class="stat-label">用AI写 outreach</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">57%</div>
+                            <div class="stat-label">用AI做客户研究</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">56%</div>
+                            <div class="stat-label">用AI改善数据质量</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">320%</div>
+                            <div class="stat-label">欢迎邮件收入提升</div>
+                        </div>
+                    </div>
+                    <p>实战案例：</p>
+                    <ul style="margin-left: 20px; color: #c8c8c8; margin-bottom: 10px;">
+                        <li><strong>BeaverCraft</strong>：AI销售情报将 outreach 速度提升4倍，实现271% ROI</li>
+                        <li><strong>Ability.ai</strong>：销售通话前准备从45分钟缩短至2分钟</li>
+                        <li><strong>Reply.io</strong>：知识碎片化问题解决，员工每日搜索时间从45分钟降至5分钟</li>
+                        <li><strong>Vue.ai</strong>：邮件个性化让转化率翻倍，平均订单价值提升15%</li>
+                    </ul>
+                    <p>关键触发器：<span class="highlight">定价页访问3次以上</span>是最高信号触发器，多数团队忽略。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag sales">#销售自动化</span>
+                    <span class="tag sales">#AI Outreach</span>
+                    <span class="tag sales">#ROI量化</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h3>AI语音代理：CallSetter AI解决"回复了但没人接电话"的致命断点</h3>
+                <div class="meta">来源：<a href="https://tested.media/ai-sales/" target="_blank">Tested Media</a> · 2026-04-07</div>
+                <div class="content">
+                    <p>AI销售程序最大失败点：客户回复"下午3点打电话给我"，但AI记录请求后无人在岗，线索永远流失。</p>
+                    <p><strong>CallSetter AI</strong>等语音代理解决方案：</p>
+                    <ul style="margin-left: 20px; color: #c8c8c8; margin-bottom: 10px;">
+                        <li>AI语音Agent处理inbound来电和outbound回拨</li>
+                        <li>48小时内完成部署，无需人工干预</li>
+                        <li>自动预约设置、资格预审、信息收集</li>
+                    </ul>
+                    <p>防spam最佳实践：每日每邮箱上限50封，多域名轮换，4-6周预热期，自然发送时间分散。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag sales">#AI语音代理</span>
+                    <span class="tag sales">#CallSetter</span>
+                    <span class="tag sales"># inbound处理</span>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h3>GoFundMe AI语音筹款：8000万次使用，捐赠增长1.25亿美元</h3>
+                <div class="meta">来源：Yahoo Finance · 2026-03</div>
+                <div class="content">
+                    <p>AI语音在"要钱"场景 surprisingly effective：GoFundMe AI工具已被使用<span class="highlight">超过8000万次</span>，今年助力捐赠增长<span class="highlight">1.25亿美元</span>。</p>
+                    <p>ElevenLabs与德国电信合作：AI助手可在通话中被语音唤醒，支持50种语言实时翻译、日历查询、地图推荐。</p>
+                    <p>Burger King测试"Patty" AI耳机：实时服务教练、配方背诵、库存预警。</p>
+                </div>
+                <div class="tags">
+                    <span class="tag sales">#AI语音</span>
+                    <span class="tag sales">#GoFundMe</span>
+                    <span class="tag sales">#ElevenLabs</span>
+                </div>
+            </div>
+
+            <div class="value-box">
+                <h4>💡 对销售业务的价值</h4>
+                <ul>
+                    <li>HubSpot Breeze证明：AI销售自动化ROI可达3.5x-6x，投入产出比明确可量化</li>
+                    <li>58%销售团队已用AI写outreach——这不是趋势，是标准配置</li>
+                    <li>定价页3次访问=最高意向信号，应立即触发AI自动跟进序列</li>
+                    <li>AI语音代理解决"最后一公里"：客户说"打电话"时，必须有人（或AI）接</li>
+                    <li>欢迎邮件比其他促销邮件多320%收入——首触即决定客户生命周期价值</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 行动建议 -->
+        <div class="section">
+            <h2>⚡ 今日行动建议</h2>
+            <div class="news-item" style="border-left-color: #22c55e;">
+                <h3 style="color: #22c55e;">销售团队本周必做3件事</h3>
+                <div class="content">
+                    <p><strong>1. 检查你的定价页追踪</strong>——是否设置了"3次访问自动触发高意向序列"？这是2026年最高ROI的自动化触发器。</p>
+                    <p><strong>2. 评估OpenClaw部署</strong>——v2026.3.22的ClawHub原生集成让销售技能一键安装，SSH沙箱让IT审批更容易。本周做POC。</p>
+                    <p><strong>3. 测试AI语音回复</strong>——如果你的outbound序列有5%以上客户回复"打电话给我"，你需要AI语音代理或增加人工覆盖。</p>
+                </div>
+            </div>
+            <div class="news-item" style="border-left-color: #a855f7;">
+                <h3 style="color: #a855f7;">技术团队关注</h3>
+                <div class="content">
+                    <p><strong>CVE-2026-25253</strong>：如果团队在使用OpenClaw，立即升级到v2026.2.23+。230+恶意技能在ClawHub被检测到，启用WASM沙箱。</p>
+                    <p><strong>GPT-5.4 100万token上下文</strong>：可一次性处理整个客户数据库做分析，销售情报团队应评估用例。</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>AI情报早班 · 每日07:45更新 · 助力销售业务智能化</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">由 OpenClaw Agent 自动生成 · 数据来源：公开网络搜索</p>
+            <a href="index.html" class="cta">📋 查看情报中心</a>
+        </footer>
+    </div>
+</body>
+</html>
