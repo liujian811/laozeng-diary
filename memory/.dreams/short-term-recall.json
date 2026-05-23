@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-22T00:40:37.848Z",
+  "updatedAt": "2026-05-23T02:15:43.087Z",
   "entries": {
     "memory:memory/2026-04-12.md:1:27": {
       "key": "memory:memory/2026-04-12.md:1:27",
@@ -161,15 +161,14 @@
       "endLine": 40,
       "source": "memory",
       "snippet": "# 销售数据官日报任务执行记录 · 2026-04-22 **任务ID：** cron:266bbacf-d99c-4928-a75a-a3793b7209f2 **执行时间：** 18:18 CST **状态：** ⚠️ 部分完成 — 模板已生成，数据接口待配置 --- ## 执行摘要 | 步骤 | 状态 | 说明 | |------|------|------| | 1. 获取有赞销售数据 | ❌ 失败 | 有赞API未配置 | | 2. 获取飞书群信息 | ❌ 失败 | 飞书AppId/AppSecret未配置 | | 3. 生成销售日报 | ✅ 完成 | 已生成模板日报（含占位符） | | 4. 推送到销售群 | ❌ 跳过 | 飞书未配置，无法推送 | | 5. 更新数据看板 | ⚠️ 跳过 | 依赖有赞数据 | --- ## 生成的文件 - `/workspace/reports/sales-daily-2026-04-22.md` — 日报模板 ## 阻塞项 1. **有赞API凭证缺失** — 需店铺AppID/Secret或数据导出权限 2. **飞书机器人未配置** — 需 `channels.feishu.appId` + `appSecret` 3. **销售群未指定** — 需确认群名称或chat_id ## 下一步建议 1. **短期：** 刘总可手动填写模板中的数据，我协助排版后推送 2. **中期：** 配置有赞+飞书接口，实现全自动日报 3. **长期：** 接入更多数据源（企微SCRM、门店POS等），丰富日报维度",
-      "recallCount": 36,
+      "recallCount": 37,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 17.299710515141488,
+      "totalScore": 17.8525238186121,
       "maxScore": 0.5711712315678596,
       "firstRecalledAt": "2026-04-23T00:33:24.626Z",
-      "lastRecalledAt": "2026-05-21T09:55:09.233Z",
+      "lastRecalledAt": "2026-05-22T09:54:12.715Z",
       "queryHashes": [
-        "4bc8d441858c",
         "9eaead6b1cf9",
         "4956124f5e73",
         "b7ba659b4cbf",
@@ -200,10 +199,10 @@
         "96e2c8e1205e",
         "f3d61db0136b",
         "ee1f91c83583",
-        "abd9b56eba1c"
+        "abd9b56eba1c",
+        "f9ef6f69167e"
       ],
       "recallDays": [
-        "2026-04-30",
         "2026-05-01",
         "2026-05-02",
         "2026-05-03",
@@ -218,7 +217,8 @@
         "2026-05-17",
         "2026-05-19",
         "2026-05-20",
-        "2026-05-21"
+        "2026-05-21",
+        "2026-05-22"
       ],
       "conceptTags": [
         "飞书appid/appsecret未配置",
@@ -333,13 +333,13 @@
       "endLine": 114,
       "source": "memory",
       "snippet": "4. **CRM数据未更新** — 自4/15后无新跟进记录写入 --- ## 下一步建议 1. **今日紧急：** 刘总团队按日报中的客户分配表，今日必须完成全部8家客户跟进 2. **短期：** 每次跟进后更新 `sales-crm/customers.json`，确保日报数据新鲜 3. **中期：** 配置有赞+飞书接口，实现全自动日报推送 --- *本记录由 销售数据官 自动生成*",
-      "recallCount": 19,
+      "recallCount": 20,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 8.267424619197845,
+      "totalScore": 8.738334116339683,
       "maxScore": 0.496663424372673,
       "firstRecalledAt": "2026-04-24T00:42:45.785Z",
-      "lastRecalledAt": "2026-05-17T09:15:19.984Z",
+      "lastRecalledAt": "2026-05-23T00:41:21.308Z",
       "queryHashes": [
         "4956124f5e73",
         "b7ba659b4cbf",
@@ -359,7 +359,8 @@
         "35aaba7ac794",
         "2d5d6d97ab82",
         "25503dbabeee",
-        "e7584f7c162a"
+        "e7584f7c162a",
+        "fd1b5b29930a"
       ],
       "recallDays": [
         "2026-04-24",
@@ -373,7 +374,8 @@
         "2026-05-05",
         "2026-05-07",
         "2026-05-11",
-        "2026-05-17"
+        "2026-05-17",
+        "2026-05-23"
       ],
       "conceptTags": [
         "自4/15后无新跟进记录写入",
@@ -1822,18 +1824,22 @@
       "endLine": 39,
       "source": "memory",
       "snippet": "- `/root/.openclaw/workspace/reports/sales-morning-reminder-2026-05-17.md` — Markdown版 - `/root/.openclaw/workspace/reports/sales-morning-reminder-2026-05-17.txt` — 纯文本版（适合飞书粘贴） ### 持续阻塞项 1. **飞书AppId/AppSecret未配置** — 推送阻塞33天 2. **有赞API未配置** — 无法自动获取成交数据 3. **CRM数据32天未更新** — 系统持续\"失明\" ### 明日（周一5/18）关键 - 节后第3周首个工作日，5月最后转折点 - 09:00紧急晨会，09:30强制CRM录入打破32天零更新 - 客户去留决策：关闭成都42天+杭州39天，集中火力保广州420万+南京350万 ---",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.4207599431276321,
+      "totalScore": 1.2153172016143796,
       "maxScore": 0.4207599431276321,
       "firstRecalledAt": "2026-05-19T06:14:55.365Z",
-      "lastRecalledAt": "2026-05-19T06:14:55.365Z",
+      "lastRecalledAt": "2026-05-23T02:15:43.087Z",
       "queryHashes": [
-        "215628e08dca"
+        "215628e08dca",
+        "8fd711528782",
+        "c87f72401025"
       ],
       "recallDays": [
-        "2026-05-19"
+        "2026-05-19",
+        "2026-05-22",
+        "2026-05-23"
       ],
       "conceptTags": [
         "飞书appid/appsecret未配置",

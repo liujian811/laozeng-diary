@@ -1,14 +1,8 @@
 {
   "lastChecks": {
-    "openclaw": 1744628400,
-    "ai_funding": 1744628400,
-    "sales_ai": 1744628400,
-    "healthcheck": 1746622920
-  },
-  "lastIntelligenceUpdate": {
-    "date": "2026-04-14",
-    "shift": "evening",
-    "articles": 1,
-    "timestamp": 1744628400
+    "feishu": null,
+    "calendar": null,
+    "system": 1747928920,
+    "report_time": "2026-05-22T22:28:00+08:00"
   }
 }
