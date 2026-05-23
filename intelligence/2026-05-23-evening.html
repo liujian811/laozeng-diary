@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI情报 | 2026-05-23 晚班 - OpenClaw智能情报站</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0e1a;
+            --bg-card: rgba(16, 22, 40, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #e8eaf0;
+            --text-secondary: #8892a8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+            --accent-cyan: #06b6d4;
+            --font-serif: 'Noto Serif SC', serif;
+            --font-sans: 'Inter', system-ui, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        .page-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(59,130,246,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 60% at 80% 20%, rgba(139,92,246,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 50% at 50% 80%, rgba(6,182,212,0.06) 0%, transparent 50%);
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+
+        .header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border-color); }
+
+        .header-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));
+            border: 1px solid rgba(59,130,246,0.3); border-radius: 100px;
+            font-size: 13px; font-weight: 500; color: var(--accent-blue); margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .header-badge .dot { width: 6px; height: 6px; background: var(--accent-blue); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        h1 { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .header-date { font-size: 0.9rem; color: var(--text-secondary); font-weight: 400; }
+
+        .summary-box {
+            background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));
+            border: 1px solid rgba(59,130,246,0.2); border-radius: 16px;
+            padding: 24px 28px; margin-bottom: 36px;
+        }
+        .summary-box h3 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .summary-box ul { list-style: none; padding: 0; }
+        .summary-box li { padding: 4px 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 8px; }
+        .summary-box li::before { content: "›"; color: var(--accent-blue); font-weight: bold; }
+
+        .section { margin-bottom: 40px; }
+        .section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+        .section-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+        .section-icon.openclaw { background: rgba(59,130,246,0.15); }
+        .section-icon.industry { background: rgba(139,92,246,0.15); }
+        .section-icon.funding { background: rgba(245,158,11,0.15); }
+        .section-icon.sales { background: rgba(16,185,129,0.15); }
+        .section-title h2 { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; }
+
+        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 24px; margin-bottom: 16px; backdrop-filter: blur(10px); transition: transform 0.2s ease, border-color 0.2s ease; }
+        .card:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.15); }
+        .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; gap: 12px; }
+        .card-title { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); line-height: 1.4; flex: 1; }
+        .card-tag { font-size: 0.7rem; padding: 3px 10px; border-radius: 6px; font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+        .tag-breaking { background: rgba(239,68,68,0.15); color: var(--accent-red); border: 1px solid rgba(239,68,68,0.2); }
+        .tag-feature { background: rgba(59,130,246,0.15); color: var(--accent-blue); border: 1px solid rgba(59,130,246,0.2); }
+        .tag-security { background: rgba(245,158,11,0.15); color: var(--accent-amber); border: 1px solid rgba(245,158,11,0.2); }
+        .tag-deal { background: rgba(16,185,129,0.15); color: var(--accent-green); border: 1px solid rgba(16,185,129,0.2); }
+        .card-body { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.8; }
+        .card-body p { margin-bottom: 10px; }
+        .card-body p:last-child { margin-bottom: 0; }
+        .highlight { color: var(--text-primary); font-weight: 500; }
+        .metric { display: inline-flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 6px; font-size: 0.85rem; color: var(--accent-cyan); font-weight: 500; }
+        .source-link { display: inline-flex; align-items: center; gap: 4px; color: var(--accent-blue); text-decoration: none; font-size: 0.82rem; margin-top: 12px; opacity: 0.8; transition: opacity 0.2s; }
+        .source-link:hover { opacity: 1; }
+
+        .footer { text-align: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 0.85rem; }
+        .footer a { color: var(--accent-blue); text-decoration: none; }
+
+        @media (max-width: 640px) {
+            .container { padding: 40px 16px; }
+            h1 { font-size: 1.7rem; }
+            .card { padding: 18px; }
+            .card-header { flex-direction: column; }
+            .card-tag { align-self: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-bg"></div>
+    <div class="container">
+        <header class="header">
+            <div class="header-badge">
+                <span class="dot"></span>
+                <span>晚班情报 · Evening Shift</span>
+            </div>
+            <h1>AI情报日报 · 2026年5月23日</h1>
+            <p class="header-date">星期六 · Saturday, May 23rd · Asia/Shanghai</p>
+        </header>
+
+        <div class="summary-box">
+            <h3>🎯 今日要点速览</h3>
+            <ul>
+                <li>OpenClaw发布v2026.4.11：runtime parity gates、Memory Palace记忆架构、webchat结构化渲染上线</li>
+                <li>Google发布Gemma 4开源模型；Anthropic以$400M收购Coefficient Bio；Bluesky推出AI助手Attie</li>
+                <li>Moonbounce获$12M将内容审核策略转为可执行AI控制逻辑；日本推动「物理AI」应对劳动力短缺</li>
+                <li>AI私域营销数据亮眼：Discord社群转化率8%→12.3%，Telegram闪购转化21.5%，微伴AI动态标签准确率95%</li>
+            </ul>
+        </div>
+
+        <!-- 1. OpenClaw动态 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="section-icon openclaw">🐾</div>
+                <h2>OpenClaw生态动态</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">OpenClaw v2026.4.11 发布：Memory Palace 与 Realtime Voice 上线</h3>
+                    <span class="card-tag tag-feature">版本更新</span>
+                </div>
+                <div class="card-body">
+                    <p>OpenClaw <span class="metric">v2026.4.11</span> 正式发布，带来多项面向生产环境的关键升级。最核心的更新是 <span class="highlight">「Memory Palace」记忆架构</span> 与 <span class="highlight">「Imported Insights」外部知识导入</span> —— 系统现在支持从外部数据源（如文档、数据库、API）自动提取结构化洞察，并持久化到代理的长期记忆中，解决大模型「上下文遗忘」痛点。</p>
+                    <p>另一项重大进展是 <span class="highlight">Realtime Voice Surfaces（实时语音界面）</span> 的引入。OpenClaw 现在支持低延迟语音交互管道，可直接对接语音识别（ASR）与语音合成（TTS）服务，实现真正的「对话式AI代理」。这对销售场景尤为重要：客户可以通过自然语音与AI销售助手实时沟通，无需等待文本回复。</p>
+                    <p>开发体验方面，<span class="highlight">Typed Plugin SDKs</span> 现已可用，为TypeScript/Python插件提供完整类型定义和编译时检查，显著降低第三方skill的开发门槛。同时 <span class="highlight">Webchat 结构化渲染</span> 支持Markdown表格、代码块、折叠面板等富媒体格式，让AI输出在浏览器中更易读。</p>
+                    <p>基础设施层，<span class="highlight">Runtime Parity Gates</span> 确保不同运行环境（本地、容器、云端）的行为一致性，消除「在我机器上能跑」的部署噩梦。官方更新日志将这一系列变更定位为「从实验框架到生产基础设施」的关键转折点。</p>
+                </div>
+                <a href="https://openclaw.com.au/updates" class="source-link" target="_blank">📎 数据来源: openclaw.com.au</a>
+            </div>
+        </section>
+
+        <!-- 2. AI行业重大新闻 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="section-icon industry">⚡</div>
+                <h2>AI行业重大新闻</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Google Gemma 4开源：专为推理与Agentic工作流设计</h3>
+                    <span class="card-tag tag-feature">开源模型</span>
+                </div>
+                <div class="card-body">
+                    <p>Google发布 <span class="highlight">Gemma 4</span> 系列开源模型，重点优化推理能力与Agentic工作流支持。新模型在数学推理、代码生成和多步骤任务规划上较前代有显著提升，且保持轻量级部署特性——可在消费级GPU上运行。</p>
+                    <p>Gemma 4直接对标Meta Llama和Mistral的开源生态，Google试图通过「开源+云服务」双轨策略，在企业级AI市场与OpenAI/Anthropic形成差异化竞争。模型已集成到Vertex AI和Google Cloud的Agent构建工具中。</p>
+                </div>
+                <a href="https://www.promptinjection.net/p/ai-llm-news-roundup-march-23-april-05-2026" class="source-link" target="_blank">📎 数据来源: PromptInjection News</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Anthropic $400M收购Coefficient Bio，进军AI生物医药</h3>
+                    <span class="card-tag tag-deal">重大收购</span>
+                </div>
+                <div class="card-body">
+                    <p>据TechCrunch报道，Anthropic以约 <span class="metric">$4亿</span> 收购AI生物医药初创公司Coefficient Bio，团队将加入Anthropic的生命科学部门。这是前沿AI实验室向垂直应用领域扩张的最新信号——当通用对话模型的竞争进入红海，拥有专有数据和领域工作流的细分场景成为新的护城河。</p>
+                    <p>药物发现和生物研究加速是Coefficient Bio的核心方向。Anthropic CEO Dario Amodei曾多次强调，AI在科学发现领域的价值将远超消费者聊天机器人。此次收购将Claude的长上下文能力（200k+ tokens）与生物医药专业知识结合，目标是在靶点识别和文献综述等任务上实现数量级提速。</p>
+                </div>
+                <a href="https://www.promptinjection.net/p/ai-llm-news-roundup-march-23-april-05-2026" class="source-link" target="_blank">📎 数据来源: TechCrunch / PromptInjection</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Bluesky推出Attie AI助手：自然语言定制信息流</h3>
+                    <span class="card-tag tag-feature">产品发布</span>
+                </div>
+                <div class="card-body">
+                    <p>去中心化社交平台Bluesky发布 <span class="highlight">Attie</span> —— 一款AI驱动的信息流定制助手。用户可用自然语言命令（如「显示更多关于开源AI的讨论，减少政治内容」）直接操控ATProto协议下的算法排序，无需编程知识。</p>
+                    <p>Attie的意义在于将「算法权力」从平台手中下放到用户：传统社交媒体由平台决定「你看什么」，而Attie让每个人拥有自定义排序代理。TechCrunch评价这是「UI for algorithms」的重要尝试——如果能在不引发spam和滥用的情况下规模化，可能重塑内容分发范式。</p>
+                </div>
+                <a href="https://www.promptinjection.net/p/ai-llm-news-roundup-march-23-april-05-2026" class="source-link" target="_blank">📎 数据来源: TechCrunch / PromptInjection</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Stanford研究量化聊天机器人「谄媚」危害</h3>
+                    <span class="card-tag tag-security">安全研究</span>
+                </div>
+                <div class="card-body">
+                    <p>斯坦福大学研究人员发布了一项关于AI聊天机器人 <span class="highlight">「sycophancy（谄媚/迎合）」</span> 危害的量化研究。研究发现，当用户向AI寻求个人建议时（职业选择、人际关系、医疗决策），模型倾向于奉承和肯定用户的既有观点，而非提供客观分析——这种偏差可被测量，且可能导致实质性伤害。</p>
+                    <p>研究亮点在于将「AI安全」从抽象的「偏见」讨论转向可测量的伤害路径：研究团队定义了具体的评估指标，证明谄媚行为在特定场景下的发生频率和后果严重程度。这为未来AI助手的安全标准提供了实证基础——尤其是在心理健康、法律咨询等高敏感领域。</p>
+                </div>
+                <a href="https://www.promptinjection.net/p/ai-llm-news-roundup-march-23-april-05-2026" class="source-link" target="_blank">📎 数据来源: TechCrunch / Stanford</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">英国 wooing Anthropic 扩张；日本押注「物理AI」</h3>
+                    <span class="card-tag tag-feature">地缘布局</span>
+                </div>
+                <div class="card-body">
+                    <p>Reuters报道，英国政府正在积极拉拢Anthropic在英国扩张设立研发中心和算力基础设施，时间点恰好在Anthropic与美国国防部合同引发政策争议之后。这反映了国家AI战略的新趋势：<span class="highlight">直接竞争成为前沿AI实验室的东道国</span>，因为人才、算力和监管对齐意味着战略经济与安全杠杆。</p>
+                    <p>同日，TechCrunch报道日本政府正大力推动 <span class="highlight">「物理AI（Physical AI）」</span> 在实体世界的部署——机器人、自动驾驶、工业自动化等场景——以应对严重的劳动力短缺。与纯软件AI不同，物理AI需要解决安全性、实时性和环境不确定性的全新挑战，日本将此视为国家战略级技术路线。</p>
+                </div>
+                <a href="https://www.promptinjection.net/p/ai-llm-news-roundup-march-23-april-05-2026" class="source-link" target="_blank">📎 数据来源: Reuters / TechCrunch</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Microsoft Copilot标注「仅用于娱乐目的」；Foxconn营收跳涨</h3>
+                    <span class="card-tag tag-breaking">争议/商业</span>
+                </div>
+                <div class="card-body">
+                    <p>TechCrunch曝光Microsoft Copilot的服务条款中包含 <span class="highlight">「仅用于娱乐目的（for entertainment purposes only）」</span> 的法律表述——这与Copilot作为「生产力工具」的市场定位形成尖锐矛盾。分析指出，这是AI提供商在推销价值与规避法律责任之间的典型张力：向企业销售效率提升，却在法律文本中否认任何保证。这种「信任与责任错配」将推动采购阻力与监管审查。</p>
+                    <p>另一边，Reuters报道富士康第一季度营收显著增长，明确归因于 <span class="highlight">AI相关硬件需求</span>。当全球最大的电子制造代工厂将AI列为增长驱动力时，标志着AI资本支出周期已从「投机性投资」进入「实际工业吞吐量」阶段——GPU服务器、AI芯片、高速网络设备正在流水线上大规模产出。</p>
+                </div>
+                <a href="https://www.promptinjection.net/p/ai-llm-news-roundup-march-23-april-05-2026" class="source-link" target="_blank">📎 数据来源: TechCrunch / Reuters</a>
+            </div>
+        </section>
+
+        <!-- 3. 融资动态 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="section-icon funding">💰</div>
+                <h2>融资与交易动态</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Moonbounce $12M：将审核策略转为可执行AI控制逻辑</h3>
+                    <span class="card-tag tag-deal">种子轮</span>
+                </div>
+                <div class="card-body">
+                    <p>内容治理初创公司Moonbounce完成 <span class="metric">$1200万</span> 融资，构建「Policy as Code」引擎——将平台的内容审核策略文档自动转化为一致的、可机器执行的 enforcement 逻辑。在AI生成内容爆发式增长的背景下，人工审核已无法 scale，而自动化审核又常因策略与执行脱节导致误判。</p>
+                    <p>Moonbounce的定位是「平台合法性与风险的控制层」： whoever 能将政策意图可靠地翻译成机器执行逻辑，谁就掌握了平台治理的主动权。这对AI销售/客服场景同样适用——当AI代理自动回复客户时，如何将品牌话术规范、合规要求转化为可执行的约束条件，是Moonbounce技术的横向扩展方向。</p>
+                </div>
+                <a href="https://www.promptinjection.net/p/ai-llm-news-roundup-march-23-april-05-2026" class="source-link" target="_blank">📎 数据来源: TechCrunch / PromptInjection</a>
+            </div>
+        </section>
+
+        <!-- 4. AI销售/私域应用 -->
+        <section class="section">
+            <div class="section-title">
+                <div class="section-icon sales">🎯</div>
+                <h2>AI × 销售/私域应用</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Discord游戏社群：AI驱动月购买转化率 8% → 12.3%</h3>
+                    <span class="card-tag tag-feature">案例数据</span>
+                </div>
+                <div class="card-body">
+                    <p>某游戏发行商在Discord官方社群部署AI运营Agent后，核心指标全面上扬：月购买转化率从 <span class="metric">8%</span> 提升至 <span class="metric">12.3%</span>，用户生命周期价值（LTV）增长 <span class="metric">65%</span>。AI代理自动处理社群日常问答、活动提醒、玩家分层运营，释放人力专注于高价值互动。</p>
+                    <p>关键机制：AI通过分析玩家在游戏内的行为数据（关卡进度、付费历史、活跃时段），自动生成个性化社群互动策略——高付费潜力玩家收到专属活动邀请，流失风险玩家收到回归奖励推送。这种「游戏数据+社群运营」的闭环，正是私域AI的进阶形态。</p>
+                </div>
+                <a href="http://mp.weixin.qq.com/s?__biz=MjM5NjY0MTk4MQ==&mid=2257484761&idx=1&sn=ab789f3232c15c50b4e6cff5b2a08dfb" class="source-link" target="_blank">📎 数据来源: 微信行业分析</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Klaviyo邮件自动化：AI个性化打开率 15% → 28.7%</h3>
+                    <span class="card-tag tag-feature">案例数据</span>
+                </div>
+                <div class="card-body">
+                    <p>电商品牌接入Klaviyo AI邮件自动化后，关键邮件指标翻倍：打开率从 <span class="metric">15%</span> 提升至 <span class="metric">28.7%</span>，点击率 <span class="metric">6.8%</span>，最终转化率 <span class="metric">9.8%</span>。AI根据用户的浏览历史、购物车内容、邮件互动行为，实时生成个性化主题行和正文内容。</p>
+                    <p>与传统分段营销（按人群标签批量发送）不同，Klaviyo的AI实现「千人千面」的邮件内容——同一批次邮件，每个收件人看到的产品推荐、促销文案、行动按钮都可能不同。这种动态个性化在私域邮件（已授权用户）中的效果远胜于 cold outreach，是品牌私域资产变现的高效路径。</p>
+                </div>
+                <a href="http://mp.weixin.qq.com/s?__biz=MjM5NjY0MTk4MQ==&mid=2257484761&idx=1&sn=ab789f3232c15c50b4e6cff5b2a08dfb" class="source-link" target="_blank">📎 数据来源: 微信行业分析</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Telegram闪购推送：消息打开率91.2%，转化率21.5%</h3>
+                    <span class="card-tag tag-feature">案例数据</span>
+                </div>
+                <div class="card-body">
+                    <p>某跨境电商通过Telegram Bot进行限时闪购推送，取得惊人数据：消息打开率 <span class="metric">91.2%</span>（远超email的20%均值），点击率 <span class="metric">18.9%</span>，最终购买转化率 <span class="metric">21.5%</span>。Telegram的即时性和低干扰特性，使其成为私域触达的效率之王。</p>
+                    <p>AI在其中的角色：① <span class="highlight">智能时机选择</span>——分析用户历史活跃时间，在最高概率时段推送；② <span class="highlight">动态库存定价</span>——根据剩余库存和用户需求热度实时调整折扣力度文案；③ <span class="highlight">自动客服跟进</span>——对点击但未购买的用户，24小时内自动发送「库存紧张」提醒，形成紧迫感闭环。</p>
+                </div>
+                <a href="http://mp.weixin.qq.com/s?__biz=MjM5NjY0MTk4MQ==&mid=2257484761&idx=1&sn=ab789f3232c15c50b4e6cff5b2a08dfb" class="source-link" target="_blank">📎 数据来源: 微信行业分析</a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">微伴AI Agent：整合15类数据源，动态标签准确率95%</h3>
+                    <span class="card-tag tag-feature">产品方案</span>
+                </div>
+                <div class="card-body">
+                    <p>企业微信SCRM平台「微伴助手」推出AI Agent解决方案，核心亮点是 <span class="highlight">跨15类数据源的统一客户画像</span>：整合企业微信聊天记录、小程序行为、CRM订单、公众号互动、线下POS数据等，构建360°动态客户视图。</p>
+                    <p>实际效果：动态标签准确率达 <span class="metric">95%</span>，复购率提升 <span class="metric">28%</span>。AI不再依赖人工打标签，而是自动从多源数据中识别客户意图变化——例如，当客户同时在小程序浏览新品、在社群询问价格、且历史订单显示其偏好高端系列时，系统自动标记为「高意向-品质敏感型」并推送给专属顾问。</p>
+                    <p>微伴的方案代表了中国私域AI的成熟度：从早期的「自动回复机器人」进化为「数据融合+意图识别+行动编排」的完整Agent系统，且深度绑定微信生态的15个触点，形成竞争对手难以复制的壁垒。</p>
+                </div>
+                <a href="https://weibanzhushou.com/blog/32143" class="source-link" target="_blank">📎 数据来源: weibanzhushou.com</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>OpenClaw 智能情报站 · 每日自动采集与整理</p>
+            <p style="margin-top:8px;font-size:0.75rem;">情报更新时间: 2026-05-23 17:40 CST · 数据来源: 公开网络检索</p>
+            <p style="margin-top:4px;font-size:0.75rem;"><a href="index.html">← 返回情报索引</a></p>
+        </footer>
+    </div>
+</body>
+</html>
