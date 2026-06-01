@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI情报简报 | 2026-06-01 晚班</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #eee; min-height: 100vh; padding: 20px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .header { text-align: center; padding: 30px 0; border-bottom: 2px solid rgba(233, 69, 96, 0.5); margin-bottom: 30px; }
+    .header h1 { font-size: 2.2rem; background: linear-gradient(45deg, #e94560, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+    .header .meta { color: #aaa; font-size: 0.9rem; }
+    .header .badge { display: inline-block; background: rgba(233, 69, 96, 0.2); border: 1px solid #e94560; color: #e94560; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin-top: 10px; }
+    .section { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #06b6d4; }
+    .section.openclaw { border-left-color: #e94560; }
+    .section.funding { border-left-color: #10b981; }
+    .section.sales { border-left-color: #f59e0b; }
+    .section h2 { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .section h2 .icon { font-size: 1.5rem; }
+    .news-item { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 15px; margin-bottom: 12px; }
+    .news-item h3 { font-size: 1rem; color: #06b6d4; margin-bottom: 8px; }
+    .news-item.openclaw h3 { color: #e94560; }
+    .news-item.funding h3 { color: #10b981; }
+    .news-item.sales h3 { color: #f59e0b; }
+    .news-item p { color: #ccc; font-size: 0.9rem; line-height: 1.6; }
+    .news-item .tag { display: inline-block; background: rgba(6, 182, 212, 0.2); color: #06b6d4; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-top: 8px; margin-right: 5px; }
+    .news-item .tag.openclaw-tag { background: rgba(233, 69, 96, 0.2); color: #e94560; }
+    .news-item .tag.funding-tag { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+    .news-item .tag.sales-tag { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+    .highlight-box { background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(6, 182, 212, 0.1)); border: 1px solid rgba(233, 69, 96, 0.3); border-radius: 10px; padding: 20px; margin: 20px 0; }
+    .highlight-box h3 { color: #e94560; margin-bottom: 10px; font-size: 1.1rem; }
+    .highlight-box ul { list-style: none; padding-left: 0; }
+    .highlight-box ul li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ddd; font-size: 0.9rem; }
+    .highlight-box ul li:last-child { border-bottom: none; }
+    .highlight-box ul li::before { content: "▸"; color: #e94560; margin-right: 8px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+    .stat-card { background: rgba(0,0,0,0.2); border-radius: 10px; padding: 20px; text-align: center; }
+    .stat-card .number { font-size: 1.8rem; font-weight: bold; color: #e94560; }
+    .stat-card .label { color: #aaa; font-size: 0.8rem; margin-top: 5px; }
+    .footer { text-align: center; padding: 30px 0; color: #666; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 30px; }
+    .action-box { background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 8px; padding: 15px; margin-top: 15px; }
+    .action-box h4 { color: #06b6d4; margin-bottom: 8px; font-size: 0.95rem; }
+    .action-box p { color: #bbb; font-size: 0.85rem; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🌙 AI情报简报</h1>
+      <p class="meta">2026年6月1日 晚班 | 18:00-24:00 | 第93期</p>
+      <span class="badge">🔥 重大更新</span>
+    </div>
+
+    <div class="section openclaw">
+      <h2><span class="icon">🤖</span> OpenClaw 最新动态</h2>
+      
+      <div class="news-item openclaw">
+        <h3>🚀 v2026.5.30-beta.1 & v2026.5.28 正式发布</h3>
+        <p>OpenClaw 在5月底连续发布两个重要版本。v2026.5.28作为稳定版，重点强化了Agent和Codex运行时的恢复能力，subagent保持cwd和workspace分离，session locks在timeout时能正常释放。v2026.5.30-beta.1则引入了<strong>Skill Workshop</strong>功能——支持通过PROPOSAL.md草稿创建、审核和回滚技能提案，这是技能生态治理的重大进步。</p>
+        <span class="tag openclaw-tag">技能系统</span>
+        <span class="tag openclaw-tag">Runtime</span>
+      </div>
+
+      <div class="news-item openclaw">
+        <h3>📋 Workboard 多Agent编排面板上线</h3>
+        <p>新增orchestration primitives和agent coordination工具，支持多Agent规划与运行追踪。这标志着OpenClaw从单Agent向<strong>Agent Swarm</strong>（智能体集群）架构演进，企业级多Agent协作场景正式可用。</p>
+        <span class="tag openclaw-tag">Workboard</span>
+        <span class="tag openclaw-tag">多Agent</span>
+      </div>
+
+      <div class="news-item openclaw">
+        <h3>📱 iOS 实时Talk与推送中继</h3>
+        <p>新增hosted push relay默认值、realtime Talk playback和guard WebSocket ping路径，移动端会话稳定性大幅提升。配合Control UI新增的Dreaming-tab Agent选择器，移动端体验已接近桌面端。</p>
+        <span class="tag openclaw-tag">iOS</span>
+        <span class="tag openclaw-tag">移动端</span>
+      </div>
+
+      <div class="news-item openclaw">
+        <h3>🔌 插件生态扩展：Copilot & Tokenjuice</h3>
+        <p>GitHub Copilot Agent runtime和Tokenjuice正式以外部插件形式发布（@openclaw/copilot和@openclaw/tokenjuice），均可在npm和ClawHub安装。SecretRef provider integration manifest contract也同步新增，插件安全凭证管理更加规范。</p>
+        <span class="tag openclaw-tag">插件</span>
+        <span class="tag openclaw-tag">ClawHub</span>
+      </div>
+
+      <div class="highlight-box">
+        <h3>📅 重要事件预告</h3>
+        <ul>
+          <li>6月3日：OpenClaw: After Hours @ GitHub HQ（旧金山）—— Peter Steinberger炉边对话 + 社区闪电演讲</li>
+          <li>GitHub Stars 突破35万，持续保持开源项目增长最快记录</li>
+          <li>ClawHub新增技能验证和信任机制，插件安全性提升</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section funding">
+      <h2><span class="icon">💰</span> AI行业重大新闻与融资</h2>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="number">$300B</div>
+          <div class="label">2026 Q1全球VC总额</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">80%</div>
+          <div class="label">AI占比</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">$57亿</div>
+          <div class="label">OpenAI Q1营收</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">$965B</div>
+          <div class="label">Anthropic估值</div>
+        </div>
+      </div>
+
+      <div class="news-item funding">
+        <h3>🦄 Anthropic 650亿美元融资，估值达9650亿美元</h3>
+        <p>6月1日最新消息：Anthropic完成<strong>650亿美元</strong>融资，估值飙升至<strong>9650亿美元</strong>。Apollo和Blackstone安排了360亿美元Google TPU债务协议。Anthropic 2026 Q1营收48亿美元，虽略低于OpenAI的57亿，但增速更快，预计Q2可能实现首个盈利季度。</p>
+        <span class="tag funding-tag">融资</span>
+        <span class="tag funding-tag">Anthropic</span>
+      </div>
+
+      <div class="news-item funding">
+        <h3>🚀 OpenAI冲刺Q4 IPO，目标万亿估值</h3>
+        <p>OpenAI正与高盛、摩根士丹利准备IPO材料，最快9月提交招股书。ChatGPT付费用户从4700万增至5500万，周活用户9.2亿。但调整后营业利润率为-122%，每收入1美元亏损1.22美元——加速上市背后有资金压力。</p>
+        <span class="tag funding-tag">IPO</span>
+        <span class="tag funding-tag">OpenAI</span>
+      </div>
+
+      <div class="news-item funding">
+        <h3>🛡️ 三大AI巨头联手对抗中国模型蒸馏</h3>
+        <p>OpenAI、Google、Anthropic罕见联手，通过Frontier Model Forum共享威胁情报，对抗DeepSeek、Moonshot AI、MiniMax等中国公司的"对抗性蒸馏"攻击。据Anthropic披露，三家中国公司通过约2.4万个欺诈账户进行了超过1600万次交互。</p>
+        <span class="tag funding-tag">安全</span>
+        <span class="tag funding-tag">地缘政治</span>
+      </div>
+
+      <div class="news-item funding">
+        <h3>💔 OpenAI永久关闭Sora业务线</h3>
+        <p>2026年初OpenAI宣布永久关闭Sora视频生成业务，被解读为"断臂求生"。视频生成算力消耗是文本的几十倍且缺乏直接商业变现路径。OpenAI正将资源转向企业业务和Codex编程助手，以应对Anthropic的竞争。</p>
+        <span class="tag funding-tag">战略调整</span>
+        <span class="tag funding-tag">OpenAI</span>
+      </div>
+    </div>
+
+    <div class="section sales">
+      <h2><span class="icon">🎯</span> AI在销售/私域领域的应用</h2>
+
+      <div class="news-item sales">
+        <h3>🤖 2026年CRM自动化三大转变</h3>
+        <p>AI驱动的CRM自动化正经历根本性变革：<strong>1）从规则驱动到Agentic</strong>——Agentforce、Breeze、Zia等自动编写规则；<strong>2）从"通知销售"到"替销售执行"</strong>——自动起草邮件、预约会议、更新商机阶段；<strong>3）从单渠道到全渠道</strong>——整合聊天、语音、DM、会议转录。</p>
+        <span class="tag sales-tag">CRM</span>
+        <span class="tag sales-tag">Agentic AI</span>
+      </div>
+
+      <div class="news-item sales">
+        <h3>☕ Coffee AI：CRM Agent的新标杆</h3>
+        <p>Coffee AI Agent作为领先的CRM自动化工具，可自主完成联系人创建、活动记录、管道智能管理。与传统工具不同，它能主动推理复杂场景并适应流程变化，处理邮件和通话中的非结构化数据。团队每周可节省8-12小时，实际销售时间提升15-20%。</p>
+        <span class="tag sales-tag">AI Agent</span>
+        <span class="tag sales-tag">自动化</span>
+      </div>
+
+      <div class="news-item sales">
+        <h3>🏪 生鲜零售私域案例：复购率从12%到31%</h3>
+        <p>某年营收超6亿的连锁生鲜品牌（32家门店）使用SCRM+AI方案：3个月沉淀私域客户28万，导购人均服务客户从42人提升至136人（效率提升224%）。获客成本降低48%，私域营收占比从3%提升至27%，年新增私域营收超1.2亿元。</p>
+        <span class="tag sales-tag">私域</span>
+        <span class="tag sales-tag">零售</span>
+      </div>
+
+      <div class="news-item sales">
+        <h3>🏦 银行私域：AI+SCRM人均服务破万人</h3>
+        <p>某头部城农商行将DeepSeek、智谱等大模型集成至企业微信侧边栏，自动推荐合规话术、实时情绪识别预警。直营团队人均服务客户突破10,000人，开门红期间单月AUM增长达1500万/人，客户满意度提升90%。</p>
+        <span class="tag sales-tag">银行</span>
+        <span class="tag sales-tag">AI客服</span>
+      </div>
+
+      <div class="news-item sales">
+        <h3>📊 HubSpot Breeze与Salesforce Einstein对比</h3>
+        <p>HubSpot Breeze automates sales tasks including CRM data enrichment, predictive lead scoring, AI buyer research briefs, and automated outreach drafting。但强调"辅助"而非完全自主。Salesforce Einstein则更适合大型企业。对于客单价低于$15K的团队，HubSpot或Zoho Zia即可提供90%价值。</p>
+        <span class="tag sales-tag">HubSpot</span>
+        <span class="tag sales-tag">Salesforce</span>
+      </div>
+
+      <div class="action-box">
+        <h4>💡 对销售团队的启示</h4>
+        <p>AI CRM自动化已从"建议"阶段进入"执行"阶段。关键成功因素：数据质量 > AI功能。26%的AI转型失败归因于脏数据。建议：先清理CRM数据（去重、补全、更新），再引入AI层。对于私域运营，DM-to-CRM对接是2026年优先级最高的工作流。</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>AI情报简报 | 每日早(07:00)午(12:00)晚(18:00)三班更新 | 数据来源：公开网络</p>
+      <p>编辑：AI情报官 | 最后更新：2026-06-01 18:40 CST</p>
+    </div>
+  </div>
+</body>
+</html>
